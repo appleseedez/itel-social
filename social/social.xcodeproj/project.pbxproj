@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47984BD11828DF270096B67D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 47984BD01828DF270096B67D /* libsqlite3.dylib */; };
+		47984BD41828E5730096B67D /* NXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BD31828E5730096B67D /* NXLoginViewController.m */; };
 		BA83444A18289FE300291B81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444918289FE300291B81 /* Foundation.framework */; };
 		BA83444C18289FE300291B81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444B18289FE300291B81 /* CoreGraphics.framework */; };
 		BA83444E18289FE300291B81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444D18289FE300291B81 /* UIKit.framework */; };
@@ -37,7 +39,6 @@
 		BA8344D11828D3D400291B81 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344A21828D3D400291B81 /* FMDatabaseAdditions.m */; };
 		BA8344D21828D3D400291B81 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344A41828D3D400291B81 /* FMDatabasePool.m */; };
 		BA8344D31828D3D400291B81 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344A61828D3D400291B81 /* FMDatabaseQueue.m */; };
-		BA8344D41828D3D400291B81 /* fmdb.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344A71828D3D400291B81 /* fmdb.m */; };
 		BA8344D51828D3D400291B81 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344A91828D3D400291B81 /* FMResultSet.m */; };
 		BA8344D61828D3D400291B81 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344AC1828D3D400291B81 /* AFNetworkActivityIndicatorManager.m */; };
 		BA8344D71828D3D400291B81 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344AE1828D3D400291B81 /* UIActivityIndicatorView+AFNetworking.m */; };
@@ -63,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47984BD01828DF270096B67D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		47984BD21828E5730096B67D /* NXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXLoginViewController.h; sourceTree = SOURCE_ROOT; };
+		47984BD31828E5730096B67D /* NXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXLoginViewController.m; sourceTree = SOURCE_ROOT; };
 		BA83444618289FE300291B81 /* social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA83444918289FE300291B81 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA83444B18289FE300291B81 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,7 +118,6 @@
 		BA8344A41828D3D400291B81 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		BA8344A51828D3D400291B81 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
 		BA8344A61828D3D400291B81 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		BA8344A71828D3D400291B81 /* fmdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fmdb.m; sourceTree = "<group>"; };
 		BA8344A81828D3D400291B81 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		BA8344A91828D3D400291B81 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		BA8344AB1828D3D400291B81 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47984BD11828DF270096B67D /* libsqlite3.dylib in Frameworks */,
 				BA83444C18289FE300291B81 /* CoreGraphics.framework in Frameworks */,
 				BA83444E18289FE300291B81 /* UIKit.framework in Frameworks */,
 				BA83444A18289FE300291B81 /* Foundation.framework in Frameworks */,
@@ -190,6 +194,7 @@
 		BA83444818289FE300291B81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47984BD01828DF270096B67D /* libsqlite3.dylib */,
 				BA83444918289FE300291B81 /* Foundation.framework */,
 				BA83444B18289FE300291B81 /* CoreGraphics.framework */,
 				BA83444D18289FE300291B81 /* UIKit.framework */,
@@ -251,6 +256,8 @@
 		BA8344811828A0B900291B81 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47984BD21828E5730096B67D /* NXLoginViewController.h */,
+				47984BD31828E5730096B67D /* NXLoginViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -329,7 +336,6 @@
 				BA8344A41828D3D400291B81 /* FMDatabasePool.m */,
 				BA8344A51828D3D400291B81 /* FMDatabaseQueue.h */,
 				BA8344A61828D3D400291B81 /* FMDatabaseQueue.m */,
-				BA8344A71828D3D400291B81 /* fmdb.m */,
 				BA8344A81828D3D400291B81 /* FMResultSet.h */,
 				BA8344A91828D3D400291B81 /* FMResultSet.m */,
 			);
@@ -485,7 +491,6 @@
 				BA8344D61828D3D400291B81 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BA8344CF1828D3D400291B81 /* GCDAsyncUdpSocket.m in Sources */,
 				BA8344C81828D3D400291B81 /* AFNetworkReachabilityManager.m in Sources */,
-				BA8344D41828D3D400291B81 /* fmdb.m in Sources */,
 				BA8344D11828D3D400291B81 /* FMDatabaseAdditions.m in Sources */,
 				BA8344CC1828D3D400291B81 /* AFURLResponseSerialization.m in Sources */,
 				BA8344DC1828D3D400291B81 /* UIWebView+AFNetworking.m in Sources */,
@@ -504,6 +509,7 @@
 				BA83446318289FE300291B81 /* NXViewController.m in Sources */,
 				BA8344D21828D3D400291B81 /* FMDatabasePool.m in Sources */,
 				BA8344D31828D3D400291B81 /* FMDatabaseQueue.m in Sources */,
+				47984BD41828E5730096B67D /* NXLoginViewController.m in Sources */,
 				BA8344D81828D3D400291B81 /* UIAlertView+AFNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,6 +731,7 @@
 				BA83447D18289FE300291B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA83447E18289FE300291B81 /* Build configuration list for PBXNativeTarget "socialTests" */ = {
 			isa = XCConfigurationList;
@@ -733,6 +740,7 @@
 				BA83448018289FE300291B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
