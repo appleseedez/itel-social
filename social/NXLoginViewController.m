@@ -7,20 +7,20 @@
 //
 
 #import "NXLoginViewController.h"
-
+#import "NXInputChecker.h"
 @interface NXLoginViewController ()
 
 @end
 
 @implementation NXLoginViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+#pragma  mark - 点击空白退出键盘
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+#pragma mark - 检测用户输入
+-(BOOL)checkUserInput{
+    
+    return [NXInputChecker checkCloudNumber:self.txtUserCloudNumber.text]&&[NXInputChecker checkPassword:self.txtUserPassword.text];
 }
 
 - (void)viewDidLoad
@@ -29,10 +29,6 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end

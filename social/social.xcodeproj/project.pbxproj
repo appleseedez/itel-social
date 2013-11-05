@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		47984BD11828DF270096B67D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 47984BD01828DF270096B67D /* libsqlite3.dylib */; };
 		47984BD41828E5730096B67D /* NXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BD31828E5730096B67D /* NXLoginViewController.m */; };
+		47984BD61828EBE10096B67D /* NXLoginViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BD51828EBE10096B67D /* NXLoginViewControllerTest.m */; };
+		47984BDB1828F0150096B67D /* NXInputChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BDA1828F0150096B67D /* NXInputChecker.m */; };
+		47984BDC1828F0150096B67D /* NXInputChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BDA1828F0150096B67D /* NXInputChecker.m */; };
+		47984BDE1828F0DC0096B67D /* NXInputCheckerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BDD1828F0DC0096B67D /* NXInputCheckerTest.m */; };
 		BA83444A18289FE300291B81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444918289FE300291B81 /* Foundation.framework */; };
 		BA83444C18289FE300291B81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444B18289FE300291B81 /* CoreGraphics.framework */; };
 		BA83444E18289FE300291B81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444D18289FE300291B81 /* UIKit.framework */; };
@@ -17,13 +21,11 @@
 		BA83445A18289FE300291B81 /* NXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83445918289FE300291B81 /* NXAppDelegate.m */; };
 		BA83445D18289FE300291B81 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA83445B18289FE300291B81 /* Main_iPhone.storyboard */; };
 		BA83446018289FE300291B81 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA83445E18289FE300291B81 /* Main_iPad.storyboard */; };
-		BA83446318289FE300291B81 /* NXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83446218289FE300291B81 /* NXViewController.m */; };
 		BA83446518289FE300291B81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA83446418289FE300291B81 /* Images.xcassets */; };
 		BA83446C18289FE300291B81 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83446B18289FE300291B81 /* XCTest.framework */; };
 		BA83446D18289FE300291B81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444918289FE300291B81 /* Foundation.framework */; };
 		BA83446E18289FE300291B81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444D18289FE300291B81 /* UIKit.framework */; };
 		BA83447618289FE300291B81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA83447418289FE300291B81 /* InfoPlist.strings */; };
-		BA83447818289FE300291B81 /* socialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83447718289FE300291B81 /* socialTests.m */; };
 		BA8344C51828D3D400291B81 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344871828D3D400291B81 /* AFHTTPRequestOperation.m */; };
 		BA8344C61828D3D400291B81 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8344891828D3D400291B81 /* AFHTTPRequestOperationManager.m */; };
 		BA8344C71828D3D400291B81 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83448B1828D3D400291B81 /* AFHTTPSessionManager.m */; };
@@ -67,6 +69,10 @@
 		47984BD01828DF270096B67D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		47984BD21828E5730096B67D /* NXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXLoginViewController.h; sourceTree = SOURCE_ROOT; };
 		47984BD31828E5730096B67D /* NXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		47984BD51828EBE10096B67D /* NXLoginViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXLoginViewControllerTest.m; sourceTree = "<group>"; };
+		47984BD91828F0150096B67D /* NXInputChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXInputChecker.h; sourceTree = SOURCE_ROOT; };
+		47984BDA1828F0150096B67D /* NXInputChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXInputChecker.m; sourceTree = SOURCE_ROOT; };
+		47984BDD1828F0DC0096B67D /* NXInputCheckerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXInputCheckerTest.m; sourceTree = "<group>"; };
 		BA83444618289FE300291B81 /* social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA83444918289FE300291B81 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA83444B18289FE300291B81 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,14 +85,11 @@
 		BA83445918289FE300291B81 /* NXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXAppDelegate.m; sourceTree = "<group>"; };
 		BA83445C18289FE300291B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		BA83445F18289FE300291B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		BA83446118289FE300291B81 /* NXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXViewController.h; sourceTree = "<group>"; };
-		BA83446218289FE300291B81 /* NXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXViewController.m; sourceTree = "<group>"; };
 		BA83446418289FE300291B81 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BA83446A18289FE300291B81 /* socialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = socialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA83446B18289FE300291B81 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BA83447318289FE300291B81 /* socialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "socialTests-Info.plist"; sourceTree = "<group>"; };
 		BA83447518289FE300291B81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BA83447718289FE300291B81 /* socialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = socialTests.m; sourceTree = "<group>"; };
 		BA8344861828D3D400291B81 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		BA8344871828D3D400291B81 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		BA8344881828D3D400291B81 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -172,6 +175,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47984BD71828EF160096B67D /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47984BD51828EBE10096B67D /* NXLoginViewControllerTest.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		47984BD81828EFC20096B67D /* models */ = {
+			isa = PBXGroup;
+			children = (
+				47984BDD1828F0DC0096B67D /* NXInputCheckerTest.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		BA83443D18289FE300291B81 = {
 			isa = PBXGroup;
 			children = (
@@ -214,8 +233,6 @@
 				BA83445918289FE300291B81 /* NXAppDelegate.m */,
 				BA83445B18289FE300291B81 /* Main_iPhone.storyboard */,
 				BA83445E18289FE300291B81 /* Main_iPad.storyboard */,
-				BA83446118289FE300291B81 /* NXViewController.h */,
-				BA83446218289FE300291B81 /* NXViewController.m */,
 				BA83446418289FE300291B81 /* Images.xcassets */,
 				BA83445018289FE300291B81 /* Supporting Files */,
 			);
@@ -237,7 +254,8 @@
 		BA83447118289FE300291B81 /* appTests */ = {
 			isa = PBXGroup;
 			children = (
-				BA83447718289FE300291B81 /* socialTests.m */,
+				47984BD81828EFC20096B67D /* models */,
+				47984BD71828EF160096B67D /* controllers */,
 				BA83447218289FE300291B81 /* Supporting Files */,
 			);
 			name = appTests;
@@ -265,6 +283,8 @@
 		BA8344821828A0B900291B81 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				47984BD91828F0150096B67D /* NXInputChecker.h */,
+				47984BDA1828F0150096B67D /* NXInputChecker.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -506,11 +526,11 @@
 				BA8344CD1828D3D400291B81 /* AFURLSessionManager.m in Sources */,
 				BA83445618289FE300291B81 /* main.m in Sources */,
 				BA8344E01828D3D400291B81 /* USDictionaryWrapper.m in Sources */,
-				BA83446318289FE300291B81 /* NXViewController.m in Sources */,
 				BA8344D21828D3D400291B81 /* FMDatabasePool.m in Sources */,
 				BA8344D31828D3D400291B81 /* FMDatabaseQueue.m in Sources */,
 				47984BD41828E5730096B67D /* NXLoginViewController.m in Sources */,
 				BA8344D81828D3D400291B81 /* UIAlertView+AFNetworking.m in Sources */,
+				47984BDB1828F0150096B67D /* NXInputChecker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +538,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA83447818289FE300291B81 /* socialTests.m in Sources */,
+				47984BDE1828F0DC0096B67D /* NXInputCheckerTest.m in Sources */,
+				47984BDC1828F0150096B67D /* NXInputChecker.m in Sources */,
+				47984BD61828EBE10096B67D /* NXLoginViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
