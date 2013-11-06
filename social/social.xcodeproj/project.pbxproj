@@ -13,6 +13,22 @@
 		47984BDB1828F0150096B67D /* NXInputChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BDA1828F0150096B67D /* NXInputChecker.m */; };
 		47984BDC1828F0150096B67D /* NXInputChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BDA1828F0150096B67D /* NXInputChecker.m */; };
 		47984BDE1828F0DC0096B67D /* NXInputCheckerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 47984BDD1828F0DC0096B67D /* NXInputCheckerTest.m */; };
+		47A0145A1829D0F70038427E /* NXRegViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A014591829D0F70038427E /* NXRegViewControllerTest.m */; };
+		47A0146B1829E11E0038427E /* NXRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A014691829E11E0038427E /* NXRegViewController.m */; };
+		47A0146C1829E11E0038427E /* NXRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A014691829E11E0038427E /* NXRegViewController.m */; };
+		47A014711829EF350038427E /* mockhead.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A014701829EF350038427E /* mockhead.png */; };
+		47A014721829EF350038427E /* mockhead.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A014701829EF350038427E /* mockhead.png */; };
+		47A014761829F3720038427E /* NXResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A014741829F3720038427E /* NXResetPasswordViewController.m */; };
+		47A014771829F3720038427E /* NXResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A014741829F3720038427E /* NXResetPasswordViewController.m */; };
+		47A0147A182A0EB00038427E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA83445B18289FE300291B81 /* Main_iPhone.storyboard */; };
+		47A0147E182A25C90038427E /* NXTelResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A0147C182A25C90038427E /* NXTelResetViewController.m */; };
+		47A0147F182A25C90038427E /* NXTelResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A0147C182A25C90038427E /* NXTelResetViewController.m */; };
+		47A01485182A25F50038427E /* NXInputNewPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A01483182A25F50038427E /* NXInputNewPasswordViewController.m */; };
+		47A01486182A25F50038427E /* NXInputNewPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A01483182A25F50038427E /* NXInputNewPasswordViewController.m */; };
+		47A0148C182A2B300038427E /* NXQuestionResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A0148A182A2B300038427E /* NXQuestionResetViewController.m */; };
+		47A0148D182A2B300038427E /* NXQuestionResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A0148A182A2B300038427E /* NXQuestionResetViewController.m */; };
+		47A01491182A32B30038427E /* itel.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A01490182A32B30038427E /* itel.png */; };
+		47A01492182A32B30038427E /* itel.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A01490182A32B30038427E /* itel.png */; };
 		BA83444A18289FE300291B81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444918289FE300291B81 /* Foundation.framework */; };
 		BA83444C18289FE300291B81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444B18289FE300291B81 /* CoreGraphics.framework */; };
 		BA83444E18289FE300291B81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444D18289FE300291B81 /* UIKit.framework */; };
@@ -73,6 +89,19 @@
 		47984BD91828F0150096B67D /* NXInputChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXInputChecker.h; sourceTree = SOURCE_ROOT; };
 		47984BDA1828F0150096B67D /* NXInputChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXInputChecker.m; sourceTree = SOURCE_ROOT; };
 		47984BDD1828F0DC0096B67D /* NXInputCheckerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXInputCheckerTest.m; sourceTree = "<group>"; };
+		47A014591829D0F70038427E /* NXRegViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXRegViewControllerTest.m; sourceTree = "<group>"; };
+		47A014681829E11E0038427E /* NXRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXRegViewController.h; sourceTree = SOURCE_ROOT; };
+		47A014691829E11E0038427E /* NXRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXRegViewController.m; sourceTree = SOURCE_ROOT; };
+		47A014701829EF350038427E /* mockhead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mockhead.png; sourceTree = "<group>"; };
+		47A014731829F3720038427E /* NXResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXResetPasswordViewController.h; sourceTree = SOURCE_ROOT; };
+		47A014741829F3720038427E /* NXResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXResetPasswordViewController.m; sourceTree = SOURCE_ROOT; };
+		47A0147B182A25C90038427E /* NXTelResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTelResetViewController.h; sourceTree = SOURCE_ROOT; };
+		47A0147C182A25C90038427E /* NXTelResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTelResetViewController.m; sourceTree = SOURCE_ROOT; };
+		47A01482182A25F50038427E /* NXInputNewPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXInputNewPasswordViewController.h; sourceTree = SOURCE_ROOT; };
+		47A01483182A25F50038427E /* NXInputNewPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXInputNewPasswordViewController.m; sourceTree = SOURCE_ROOT; };
+		47A01489182A2B300038427E /* NXQuestionResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXQuestionResetViewController.h; sourceTree = SOURCE_ROOT; };
+		47A0148A182A2B300038427E /* NXQuestionResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXQuestionResetViewController.m; sourceTree = SOURCE_ROOT; };
+		47A01490182A32B30038427E /* itel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itel.png; sourceTree = "<group>"; };
 		BA83444618289FE300291B81 /* social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA83444918289FE300291B81 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA83444B18289FE300291B81 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -179,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				47984BD51828EBE10096B67D /* NXLoginViewControllerTest.m */,
+				47A014591829D0F70038427E /* NXRegViewControllerTest.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -189,6 +219,15 @@
 				47984BDD1828F0DC0096B67D /* NXInputCheckerTest.m */,
 			);
 			name = models;
+			sourceTree = "<group>";
+		};
+		47A0146F1829EF190038427E /* mockImage */ = {
+			isa = PBXGroup;
+			children = (
+				47A01490182A32B30038427E /* itel.png */,
+				47A014701829EF350038427E /* mockhead.png */,
+			);
+			name = mockImage;
 			sourceTree = "<group>";
 		};
 		BA83443D18289FE300291B81 = {
@@ -243,6 +282,7 @@
 		BA83445018289FE300291B81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				47A0146F1829EF190038427E /* mockImage */,
 				BA83445118289FE300291B81 /* social-Info.plist */,
 				BA83445218289FE300291B81 /* InfoPlist.strings */,
 				BA83445518289FE300291B81 /* main.m */,
@@ -276,6 +316,16 @@
 			children = (
 				47984BD21828E5730096B67D /* NXLoginViewController.h */,
 				47984BD31828E5730096B67D /* NXLoginViewController.m */,
+				47A014681829E11E0038427E /* NXRegViewController.h */,
+				47A014691829E11E0038427E /* NXRegViewController.m */,
+				47A014731829F3720038427E /* NXResetPasswordViewController.h */,
+				47A014741829F3720038427E /* NXResetPasswordViewController.m */,
+				47A0147B182A25C90038427E /* NXTelResetViewController.h */,
+				47A0147C182A25C90038427E /* NXTelResetViewController.m */,
+				47A01482182A25F50038427E /* NXInputNewPasswordViewController.h */,
+				47A01483182A25F50038427E /* NXInputNewPasswordViewController.m */,
+				47A01489182A2B300038427E /* NXQuestionResetViewController.h */,
+				47A0148A182A2B300038427E /* NXQuestionResetViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -478,8 +528,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47A01491182A32B30038427E /* itel.png in Resources */,
 				BA83446018289FE300291B81 /* Main_iPad.storyboard in Resources */,
 				BA83446518289FE300291B81 /* Images.xcassets in Resources */,
+				47A014711829EF350038427E /* mockhead.png in Resources */,
 				BA83445D18289FE300291B81 /* Main_iPhone.storyboard in Resources */,
 				BA83445418289FE300291B81 /* InfoPlist.strings in Resources */,
 			);
@@ -490,6 +542,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA83447618289FE300291B81 /* InfoPlist.strings in Resources */,
+				47A0147A182A0EB00038427E /* Main_iPhone.storyboard in Resources */,
+				47A01492182A32B30038427E /* itel.png in Resources */,
+				47A014721829EF350038427E /* mockhead.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,10 +561,12 @@
 				BA8344DF1828D3D400291B81 /* USArrayWrapper.m in Sources */,
 				BA8344DD1828D3D400291B81 /* Underscore+Functional.m in Sources */,
 				BA83445A18289FE300291B81 /* NXAppDelegate.m in Sources */,
+				47A0148C182A2B300038427E /* NXQuestionResetViewController.m in Sources */,
 				BA8344D01828D3D400291B81 /* FMDatabase.m in Sources */,
 				BA8344C61828D3D400291B81 /* AFHTTPRequestOperationManager.m in Sources */,
 				BA8344D61828D3D400291B81 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BA8344CF1828D3D400291B81 /* GCDAsyncUdpSocket.m in Sources */,
+				47A0147E182A25C90038427E /* NXTelResetViewController.m in Sources */,
 				BA8344C81828D3D400291B81 /* AFNetworkReachabilityManager.m in Sources */,
 				BA8344D11828D3D400291B81 /* FMDatabaseAdditions.m in Sources */,
 				BA8344CC1828D3D400291B81 /* AFURLResponseSerialization.m in Sources */,
@@ -519,9 +576,12 @@
 				BA8344CA1828D3D400291B81 /* AFURLConnectionOperation.m in Sources */,
 				BA8344C91828D3D400291B81 /* AFSecurityPolicy.m in Sources */,
 				BA8344C71828D3D400291B81 /* AFHTTPSessionManager.m in Sources */,
+				47A0146B1829E11E0038427E /* NXRegViewController.m in Sources */,
 				BA8344D91828D3D400291B81 /* UIButton+AFNetworking.m in Sources */,
 				BA8344D71828D3D400291B81 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				47A01485182A25F50038427E /* NXInputNewPasswordViewController.m in Sources */,
 				BA8344CB1828D3D400291B81 /* AFURLRequestSerialization.m in Sources */,
+				47A014761829F3720038427E /* NXResetPasswordViewController.m in Sources */,
 				BA8344D51828D3D400291B81 /* FMResultSet.m in Sources */,
 				BA8344CD1828D3D400291B81 /* AFURLSessionManager.m in Sources */,
 				BA83445618289FE300291B81 /* main.m in Sources */,
@@ -541,6 +601,12 @@
 				47984BDE1828F0DC0096B67D /* NXInputCheckerTest.m in Sources */,
 				47984BDC1828F0150096B67D /* NXInputChecker.m in Sources */,
 				47984BD61828EBE10096B67D /* NXLoginViewControllerTest.m in Sources */,
+				47A01486182A25F50038427E /* NXInputNewPasswordViewController.m in Sources */,
+				47A0145A1829D0F70038427E /* NXRegViewControllerTest.m in Sources */,
+				47A0147F182A25C90038427E /* NXTelResetViewController.m in Sources */,
+				47A0148D182A2B300038427E /* NXQuestionResetViewController.m in Sources */,
+				47A0146C1829E11E0038427E /* NXRegViewController.m in Sources */,
+				47A014771829F3720038427E /* NXResetPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +740,7 @@
 				INFOPLIST_FILE = "social/social-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -688,6 +755,7 @@
 				INFOPLIST_FILE = "social/social-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
