@@ -11,4 +11,6 @@
 @interface NXInputChecker : NSObject
 +(BOOL)checkCloudNumber:(NSString*)cloudNumber;
 +(BOOL)checkPassword:(NSString*)password;
++(BOOL)checkEmpty:(NSString *)string;
++(NSString *)filterStringWithString:(NSString*)string targetString:(NSString*)targetString replaceWithString:(NSString*)newString;
 @end

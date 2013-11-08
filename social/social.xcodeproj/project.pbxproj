@@ -29,6 +29,7 @@
 		47A0148D182A2B300038427E /* NXQuestionResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A0148A182A2B300038427E /* NXQuestionResetViewController.m */; };
 		47A01491182A32B30038427E /* itel.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A01490182A32B30038427E /* itel.png */; };
 		47A01492182A32B30038427E /* itel.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A01490182A32B30038427E /* itel.png */; };
+		47A0993E182C93AE00315712 /* NXMockServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A0993D182C93AE00315712 /* NXMockServer.m */; };
 		BA83444A18289FE300291B81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444918289FE300291B81 /* Foundation.framework */; };
 		BA83444C18289FE300291B81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444B18289FE300291B81 /* CoreGraphics.framework */; };
 		BA83444E18289FE300291B81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA83444D18289FE300291B81 /* UIKit.framework */; };
@@ -102,6 +103,8 @@
 		47A01489182A2B300038427E /* NXQuestionResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXQuestionResetViewController.h; sourceTree = SOURCE_ROOT; };
 		47A0148A182A2B300038427E /* NXQuestionResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXQuestionResetViewController.m; sourceTree = SOURCE_ROOT; };
 		47A01490182A32B30038427E /* itel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itel.png; sourceTree = "<group>"; };
+		47A0993C182C93AE00315712 /* NXMockServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXMockServer.h; sourceTree = "<group>"; };
+		47A0993D182C93AE00315712 /* NXMockServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXMockServer.m; sourceTree = "<group>"; };
 		BA83444618289FE300291B81 /* social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA83444918289FE300291B81 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA83444B18289FE300291B81 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,6 +233,15 @@
 			name = mockImage;
 			sourceTree = "<group>";
 		};
+		47A0993B182C937700315712 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				47A0993C182C93AE00315712 /* NXMockServer.h */,
+				47A0993D182C93AE00315712 /* NXMockServer.m */,
+			);
+			name = mocks;
+			sourceTree = "<group>";
+		};
 		BA83443D18289FE300291B81 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +276,7 @@
 		BA83444F18289FE300291B81 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				47A0993B182C937700315712 /* mocks */,
 				BA8344811828A0B900291B81 /* controllers */,
 				BA8344821828A0B900291B81 /* models */,
 				BA8344831828A0B900291B81 /* vendors */,
@@ -574,6 +587,7 @@
 				BA8344DA1828D3D400291B81 /* UIImageView+AFNetworking.m in Sources */,
 				BA8344DB1828D3D400291B81 /* UIProgressView+AFNetworking.m in Sources */,
 				BA8344CA1828D3D400291B81 /* AFURLConnectionOperation.m in Sources */,
+				47A0993E182C93AE00315712 /* NXMockServer.m in Sources */,
 				BA8344C91828D3D400291B81 /* AFSecurityPolicy.m in Sources */,
 				BA8344C71828D3D400291B81 /* AFHTTPSessionManager.m in Sources */,
 				47A0146B1829E11E0038427E /* NXRegViewController.m in Sources */,

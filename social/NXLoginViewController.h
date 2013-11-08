@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtUserCloudNumber;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtUserPassword;
+@property (weak, nonatomic) IBOutlet UILabel *txtInuptCheckMessage;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actWaitingToLogin;
 @end
