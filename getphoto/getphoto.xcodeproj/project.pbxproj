@@ -21,6 +21,8 @@
 		47492FBA182F32CC0086055C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47492F9C182F32CC0086055C /* UIKit.framework */; };
 		47492FC2182F32CC0086055C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47492FC0182F32CC0086055C /* InfoPlist.strings */; };
 		47492FC4182F32CC0086055C /* getphotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47492FC3182F32CC0086055C /* getphotoTests.m */; };
+		47492FCF182F560B0086055C /* UIImage+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 47492FCE182F560B0086055C /* UIImage+Compress.m */; };
+		479B1F38182F5E930011238D /* UIImageView+BetterFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 479B1F37182F5E930011238D /* UIImageView+BetterFace.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		47492FBF182F32CC0086055C /* getphotoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "getphotoTests-Info.plist"; sourceTree = "<group>"; };
 		47492FC1182F32CC0086055C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		47492FC3182F32CC0086055C /* getphotoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = getphotoTests.m; sourceTree = "<group>"; };
+		47492FCD182F560B0086055C /* UIImage+Compress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compress.h"; sourceTree = "<group>"; };
+		47492FCE182F560B0086055C /* UIImage+Compress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
+		479B1F36182F5E930011238D /* UIImageView+BetterFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+BetterFace.h"; sourceTree = "<group>"; };
+		479B1F37182F5E930011238D /* UIImageView+BetterFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+BetterFace.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 				47492FAA182F32CC0086055C /* Main.storyboard */,
 				47492FAD182F32CC0086055C /* NSCViewController.h */,
 				47492FAE182F32CC0086055C /* NSCViewController.m */,
+				479B1F39182F5E9B0011238D /* UIImageCategory */,
 				47492FB0182F32CC0086055C /* Images.xcassets */,
 				47492F9F182F32CC0086055C /* Supporting Files */,
 			);
@@ -150,6 +157,17 @@
 				47492FC0182F32CC0086055C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		479B1F39182F5E9B0011238D /* UIImageCategory */ = {
+			isa = PBXGroup;
+			children = (
+				47492FCD182F560B0086055C /* UIImage+Compress.h */,
+				47492FCE182F560B0086055C /* UIImage+Compress.m */,
+				479B1F36182F5E930011238D /* UIImageView+BetterFace.h */,
+				479B1F37182F5E930011238D /* UIImageView+BetterFace.m */,
+			);
+			name = UIImageCategory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479B1F38182F5E930011238D /* UIImageView+BetterFace.m in Sources */,
 				47492FAF182F32CC0086055C /* NSCViewController.m in Sources */,
+				47492FCF182F560B0086055C /* UIImage+Compress.m in Sources */,
 				47492FA5182F32CC0086055C /* main.m in Sources */,
 				47492FA9182F32CC0086055C /* NSCAppDelegate.m in Sources */,
 			);
@@ -461,6 +481,7 @@
 				47492FC9182F32CC0086055C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47492FCA182F32CC0086055C /* Build configuration list for PBXNativeTarget "getphotoTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +490,7 @@
 				47492FCC182F32CC0086055C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
