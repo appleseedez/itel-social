@@ -7,6 +7,7 @@
 //
 
 #import "NSCViewController.h"
+#import <QuartzCore/QuartzCore.h>
 #import "UIImage+Compress.h"
 #import "UIImageView+BetterFace.h"
 @interface NSCViewController ()
@@ -24,8 +25,8 @@
 {
     [super viewDidLoad];
     
-//    [self.editedImage.layer setBorderColor:[UIColor grayColor].CGColor];
-//    [self.editedImage.layer setBorderWidth:0.5f];
+    [self.betterFaceImage.layer setBorderColor:[UIColor grayColor].CGColor];
+    [self.betterFaceImage.layer setBorderWidth:0.5f];
     [self.betterFaceImage setContentMode:UIViewContentModeScaleAspectFill];
     [self.betterFaceImage setClipsToBounds:YES];
     [self.betterFaceImage setNeedsBetterFace:YES];
@@ -76,7 +77,7 @@
     
     UIImage *compressedImage=[UIImage imageWithData:compressed];
    
-    self.betterFaceImage.image=compressedImage;
+    [self.betterFaceImage setBetterFaceImage:compressedImage];
 //    //压缩像素
 //    UIImage *compressedPixel =[UIImage imageWithImage:compressedBytesImage scaledToSize:self.betterFaceImage.bounds.size];
 //    compressedPixel = [compressedPixel compressedImage];

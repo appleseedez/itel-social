@@ -23,6 +23,8 @@
 		47492FC4182F32CC0086055C /* getphotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47492FC3182F32CC0086055C /* getphotoTests.m */; };
 		47492FCF182F560B0086055C /* UIImage+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 47492FCE182F560B0086055C /* UIImage+Compress.m */; };
 		479B1F38182F5E930011238D /* UIImageView+BetterFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 479B1F37182F5E930011238D /* UIImageView+BetterFace.m */; };
+		479B1F3B182F7DA90011238D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479B1F3A182F7DA90011238D /* CoreImage.framework */; };
+		479B1F3D182F7DBF0011238D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479B1F3C182F7DBF0011238D /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		47492FCE182F560B0086055C /* UIImage+Compress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
 		479B1F36182F5E930011238D /* UIImageView+BetterFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+BetterFace.h"; sourceTree = "<group>"; };
 		479B1F37182F5E930011238D /* UIImageView+BetterFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+BetterFace.m"; sourceTree = "<group>"; };
+		479B1F3A182F7DA90011238D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		479B1F3C182F7DBF0011238D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479B1F3D182F7DBF0011238D /* QuartzCore.framework in Frameworks */,
+				479B1F3B182F7DA90011238D /* CoreImage.framework in Frameworks */,
 				47492F9B182F32CC0086055C /* CoreGraphics.framework in Frameworks */,
 				47492F9D182F32CC0086055C /* UIKit.framework in Frameworks */,
 				47492F99182F32CC0086055C /* Foundation.framework in Frameworks */,
@@ -107,6 +113,8 @@
 		47492F97182F32CC0086055C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				479B1F3C182F7DBF0011238D /* QuartzCore.framework */,
+				479B1F3A182F7DA90011238D /* CoreImage.framework */,
 				47492F98182F32CC0086055C /* Foundation.framework */,
 				47492F9A182F32CC0086055C /* CoreGraphics.framework */,
 				47492F9C182F32CC0086055C /* UIKit.framework */,

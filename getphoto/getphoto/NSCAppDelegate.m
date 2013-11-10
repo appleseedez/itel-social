@@ -7,12 +7,13 @@
 //
 
 #import "NSCAppDelegate.h"
-
+#import "UIImageView+BetterFace.h"
 @implementation NSCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //hack_uiimageview_bf();
     return YES;
 }
 							
