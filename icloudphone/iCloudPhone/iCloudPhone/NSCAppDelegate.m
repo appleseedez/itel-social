@@ -10,14 +10,14 @@
 #import "RootViewController.h"
 #import "LeftSideBarViewController.h"
 #import "ContentViewController.h"
-
+#import "NXLoginViewController.h"
 #define winFrame [UIApplication sharedApplication].delegate.window.bounds
 @implementation NSCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     RootViewController *rootVC=[[RootViewController alloc] init];
-    [self.window setRootViewController:rootVC];
+    self.RootVC=rootVC;
     
     UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
     
@@ -40,14 +40,34 @@
     leftSideBarVC.searchVC=searchVC;
     searchVC.view.frame=winFrame;
     
+//===========================登陆注册=============================
+    UIStoryboard *loginStoryboard=[UIStoryboard storyboardWithName:@"Login_iPhone" bundle:nil];
     
+    NXLoginViewController *loginVC=[loginStoryboard instantiateViewControllerWithIdentifier:@"login"];
+    self.loginVC=loginVC;
+    if (self.autoLogin) {
+        [self.window setRootViewController:rootVC];
+    }
+    else {
+        [self.window setRootViewController:loginVC];
+    }
     
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];    // Override point for customization after application launch.
     return YES;
 }
-							
+-(void)changeRootViewController:(setRootViewController)Type{
+    
+    [UIView beginAnimations:@"memory" context:nil];
+    if (Type==RootViewControllerLogin) {
+        [self.window setRootViewController:self.loginVC];
+    }
+    else if(Type==RootViewControllerMain){
+        [self.window setRootViewController:self.RootVC];
+    }
+    [UIView commitAnimations];
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

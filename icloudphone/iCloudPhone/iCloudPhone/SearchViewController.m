@@ -7,7 +7,7 @@
 //
 
 #import "SearchViewController.h"
-
+#import "ItelNetManager.h"
 @interface SearchViewController ()
 
 @end
@@ -17,6 +17,11 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
+   
+    
 }
 - (void)viewDidLoad
 {

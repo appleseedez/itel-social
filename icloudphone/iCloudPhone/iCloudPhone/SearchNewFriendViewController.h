@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface SearchNewFriendViewController : UIViewController
+#import "ItelNetManager.h"
+@interface SearchNewFriendViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,netManagerSearchUserDelegate>
 
 @end

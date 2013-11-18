@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import  "ItelUser.h"
+//查找新用户接口
+@protocol netManagerSearchUserDelegate <NSObject>
+
+-(void)searchResult:(id)result;
+
+@end
+
 @interface ItelNetManager : NSObject
+@property (weak,nonatomic) id <netManagerSearchUserDelegate> searchUserDelegate;
+
 +(ItelNetManager*)defaultManager;
 //查找用户
 -(void)searchUser:(NSString*)search;

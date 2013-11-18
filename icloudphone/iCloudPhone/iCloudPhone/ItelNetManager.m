@@ -7,7 +7,7 @@
 //
 
 #import "ItelNetManager.h"
-
+#import "AFNetworking.h"
 static ItelNetManager *manager=nil;
 @implementation ItelNetManager
 
@@ -55,7 +55,33 @@ static ItelNetManager *manager=nil;
    其中用户包括一个用户所有属性  没有设置的返回默认值 加密的返回string“sec”
  */
 -(void)searchUser:(NSString*)search{
+    NSString *searchUser=@"http://10.0.0.117:8080/CloudCommunity/login.json";
     
+    //post参数
+    NSMutableDictionary *postParameters=[[NSMutableDictionary alloc]init];
+    [postParameters setValue:search forKey:@"searchMes"];
+    
+
+    void (^success)(AFHTTPRequestOperation *operation, id responseObject) = ^(AFHTTPRequestOperation *operation, id responseObject){
+        NSLog(@"%@",responseObject);
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dic=[(NSDictionary*)responseObject objectForKey:@"message"];
+            int ret=[[dic objectForKey:@"ret"] intValue];
+            if (ret==0) {
+                id  searchResult=[[dic objectForKey:@"data"] objectForKey:@"search_result"];
+                [self.searchUserDelegate searchResult:searchResult];
+                }
+            else {
+               }
+        }//如果请求失败 则执行failure
+    };
+    void (^failure)(AFHTTPRequestOperation *operation, NSError *error)   = ^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+       
+    };
+     [[AFHTTPRequestOperationManager manager] POST:searchUser parameters:postParameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+         
+     } success:success failure:failure];
 }
 #pragma mark - 拨打用户电话接口
 /*

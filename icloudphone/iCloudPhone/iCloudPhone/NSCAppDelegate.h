@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+@class NXLoginViewController;
+@class RootViewController;
+typedef NS_ENUM(NSInteger, setRootViewController) {
+    RootViewControllerLogin = 1,
+    RootViewControllerMain = 1 << 1,
+   
+};
 
 @interface NSCAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+-(void)changeRootViewController:(setRootViewController)Type;
 
+@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic) BOOL autoLogin;
+@property (strong,nonatomic) NXLoginViewController *loginVC;
+@property (nonatomic,strong) RootViewController *RootVC;
 @end
