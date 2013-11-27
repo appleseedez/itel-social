@@ -7,9 +7,12 @@
 //
 
 #import "SearchNewFriendViewController.h"
-
+#import "NXInputChecker.h"
+#import "ItelBook.h"
+#import "StrangerCell.h"
+#import "StrangerViewController.h"
 @interface SearchNewFriendViewController ()
-
+@property (nonatomic,strong) ItelBook *searchResult;
 @end
 
 @implementation SearchNewFriendViewController
@@ -17,16 +20,15 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
+-(ItelBook*)searchResult{
+    if (_searchResult==nil) {
+        _searchResult=[[ItelBook alloc]init];
+    }
+    return _searchResult;
+}
 #pragma mark -网络接口
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [self.view endEditing:YES];
-    ItelNetManager *manager=[ItelNetManager defaultManager];
-    manager.searchUserDelegate=self;
-    [manager searchUser:searchBar.text];
-}
--(void)searchResult:(id)result{
-    
-}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,7 +37,7 @@
 #pragma mark -tableView 代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 10;
+    return [[self.searchResult getAllKeys] count];
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return @"查询结果";
@@ -43,18 +45,61 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (StrangerCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    StrangerCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
+        cell = [[StrangerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
     }
-    cell.imageView.image=[UIImage imageNamed:@"头像.jpg"];
-    cell.textLabel.text = @"姓名：张三";
+    if ([[self.searchResult getAllKeys] count]>indexPath.row) {
+        ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
+        cell.imageView.image=[UIImage imageNamed:@"mockhead"];
+        cell.lbItelNumber.text=user.itelNum;
+        cell.lbNickName.text=user.nickName;
+    }
+ 
+    
     //config the cell
     return cell;
     
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchResultShow:) name:@"searchStranger" object:nil];
+    }
+-(void)searchResultShow:(NSNotification*)notification{
+    if ([notification.name isEqualToString:@"searchStranger"]) {
+        BOOL isNormal=[[notification.userInfo objectForKey:@"isNormal"]boolValue];
+        if (isNormal) {
+            NSArray *list=[notification.object objectForKey:@"list"];
+            if ([list count]) {
+                for ( NSDictionary *dic in list) {
+                    ItelUser *user=[ItelUser userWithDictionary:dic];
+                    [self.searchResult addUser:user forKey:user.itelNum];
+                    [self.tableView reloadData];
+                }
+            }
+        }
+        else {
+            NSLog(@"%@",[notification.userInfo objectForKey:@"reason"]);
+        }
+    }
+}
+-(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
+    StrangerViewController *strangerVC=[story instantiateViewControllerWithIdentifier:@"stragerView"];
+    strangerVC.user = [self.searchResult userAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:strangerVC animated:YES];
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
+    NSString *search=searchBar.text;
+    
+    if ([NXInputChecker checkEmpty:search]) {
+        [[ItelAction action] searchStranger:search newSearch:YES];
+    }
+    
+}
 @end

@@ -8,35 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import  "ItelUser.h"
-//查找新用户接口
-@protocol netManagerSearchUserDelegate <NSObject>
+#import "ItelAction.h"
 
--(void)searchResult:(id)result;
 
-@end
+@interface ItelNetManager : NSObject <ItelNetRequestActionDelegate>
 
-@interface ItelNetManager : NSObject
-@property (weak,nonatomic) id <netManagerSearchUserDelegate> searchUserDelegate;
 
 +(ItelNetManager*)defaultManager;
-//查找用户
--(void)searchUser:(NSString*)search;
+
 //拨打用户云电话
 -(void)callUserWithItel:(NSString*)itelNum;
 //访问用户商铺
 -(void)visitUserStore:(NSString*)itelNum;
-//删除联系人
--(void)delUser:(NSString*)itel;
-//添加联系人
--(void)addUser:(NSString*)itel;
-//匹配通讯录中联系人
--(void)checkUsersOwnItel:(NSArray*)users;
-//添加联系人到黑名单
--(void)addToBlackList:(NSString*)itel;
-//从黑名单中移除
--(void)removeFromBlackList:(NSString*)itel;
-//编辑用户备注
--(void)editUserRemark:(NSString*)newRemark user:(NSString*)itel;
-//刷新好友列表
--(void)refreshUserList;
+
+
+
 @end

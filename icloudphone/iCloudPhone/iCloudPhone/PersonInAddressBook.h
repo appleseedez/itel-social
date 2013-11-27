@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import  "ItelUser.h"
-@interface PersonInAddressBook : NSObject
+@interface PersonInAddressBook : ItelUser
 @property (nonatomic,strong) NSString *name;
-@property (nonatomic,strong) NSMutableArray *tels;
-@property (nonatomic,strong) NSMutableArray *emails;
+@property (nonatomic,strong) NSString *tel;
+
 @property (nonatomic,strong) ItelUser *itelUser;
 @end

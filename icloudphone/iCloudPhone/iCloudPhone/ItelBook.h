@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "ItelAction.h"
-@interface ItelBook : NSObject
--(id)actionWithItelBook:(ItelAction*)action;
+@interface ItelBook : NSObject <NSCopying>
+-(void)addUser:(ItelUser*)user forKey:(NSString*)key;
+-(void)removeUserforKey:(NSString*)key;
+-(NSArray*)getAllKeys;
+-(ItelUser*)userForKey:(NSString*)key;
+-(ItelUser*)userAtIndex:(NSInteger)index;
+-(ItelBook*)appendingByItelBook:(ItelBook*)itelBook;
 @end

@@ -9,6 +9,7 @@
 #import "AddressBook.h"
 #import <AddressBook/AddressBook.h>
 #import "PersonInAddressBook.h"
+#import "NXInputChecker.h"
 @interface AddressBook ()
 @property (nonatomic,strong) NSMutableArray *addressBook;
 @end
@@ -25,6 +26,12 @@
     }
     return _addressBook;
 }
+-(NSArray*)getAllKeys{
+    while (self.isLoading) {
+        
+    }
+   return  [super getAllKeys];
+}
 #pragma mark - 电话本操作
 -(void)getAddressBook{
     CFErrorRef error=NULL;
@@ -36,6 +43,7 @@
                 NSLog(@"%@",error);
             }
             else if(granted){
+                self.isLoading=YES;
                 [self getPeopleInAddressBook];
             }
             
@@ -54,39 +62,45 @@
     NSArray *array=(NSArray*)CFBridgingRelease(arrayRef);
     for (id person in array)
     {
-        PersonInAddressBook *p=[[PersonInAddressBook alloc] init];
+        
         NSString *firstName = (NSString *)CFBridgingRelease(ABRecordCopyValue(CFBridgingRetain(person), kABPersonFirstNameProperty));
         firstName = [firstName stringByAppendingFormat:@" "];
         NSString *lastName = (NSString *)CFBridgingRelease(ABRecordCopyValue(CFBridgingRetain(person), kABPersonLastNameProperty));
-        if (lastName==NULL) {
+        if (lastName==nil) {
             lastName=@"";
         }
         NSString *fullName = [NSString stringWithFormat:@"%@%@",lastName,firstName];
-        //NSLog(@"===%@",fullName);
-        p.name=fullName;
+        //NSLog(@"%@",fullName);
+        
         ABMultiValueRef phones = (ABMultiValueRef) ABRecordCopyValue(CFBridgingRetain(person), kABPersonPhoneProperty);
         for(int i = 0 ;i < ABMultiValueGetCount(phones); i++)
         {
+            
             NSString *phone = (NSString *)CFBridgingRelease(ABMultiValueCopyValueAtIndex(phones, i));
-            //NSLog(@"===%@",phone);
-            [p.tels addObject:phone];
+            
+            
+            NSString *mobilePhone=[NXInputChecker resetPhoneNumber11:phone];
+            if ([NXInputChecker checkPhoneNumberIsMobile:mobilePhone]) {
+                PersonInAddressBook *p=[[PersonInAddressBook alloc] init];
+                p.name=fullName;
+                p.tel=mobilePhone;
+                [self addUser:p forKey:p.tel];
+               // NSLog(@"%@:%@",p.name,p.tel);
+            }
+            
         }
-        ABMultiValueRef mails = (ABMultiValueRef) ABRecordCopyValue(CFBridgingRetain(person), kABPersonEmailProperty);
-        for(int i = 0 ;i < ABMultiValueGetCount(mails); i++)
-        {
-            NSString *mail = (NSString *)CFBridgingRelease(ABMultiValueCopyValueAtIndex(mails, i));
-            //NSLog(@"==%@",mail);
-            [p.emails addObject:mail];
-        }
-        [self.addressBook addObject:p];
+        
+        
+        
         
     }
     
-    //NSLog(@"%@",self.addressBook);
-    CFRelease(addressBook);
+    self.isLoading=NO;
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegate addressBookLoadingFinish:self.addressBook];
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"addressLoadingFinish" object:self];
     });
+   
+    
 }
 @end

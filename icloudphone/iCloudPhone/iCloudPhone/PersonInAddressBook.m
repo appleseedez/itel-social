@@ -9,16 +9,6 @@
 #import "PersonInAddressBook.h"
 
 @implementation PersonInAddressBook
--(NSMutableArray*)tels{
-    if (_tels==nil) {
-        _tels=[[NSMutableArray alloc]init];
-    }
-    return _tels;
-}
--(NSMutableArray*)emails{
-    if (_emails==nil) {
-        _emails=[[NSMutableArray alloc]init];
-    }
-    return _emails;
-}
+
+
 @end

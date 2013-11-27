@@ -33,12 +33,6 @@
 }
 -(void)setCell:(PersonInAddressBook*)person{
     self.name.text=person.name;
-    if ([person.tels count]) {
-        self.tel.text =[person.tels objectAtIndex:0];
-    }
-    if ([person.emails count]) {
-         self.email.text=[person.emails objectAtIndex:0];
-    }
-    self.itelUser=person.itelUser;
+    self.tel.text=person.tel;
 }
 @end

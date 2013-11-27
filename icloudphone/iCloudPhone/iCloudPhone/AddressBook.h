@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ItelBook.h"
 @protocol AddressBookDelegate <NSObject>
 
 -(void)addressBookLoadingFinish:(NSArray*)addressBook;
 
 @end
-@interface AddressBook : NSObject
+@interface AddressBook : ItelBook
 @property (nonatomic,weak) id <AddressBookDelegate> delegate;
-
+@property (nonatomic)   BOOL isLoading;
 -(void)loadAddressBook;
+
 @end

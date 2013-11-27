@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ItelUser.h"
-@interface ItelUserManager : NSObject
+#import "ItelAction.h"
+#import "HostItelUser.h"
+
+@interface ItelUserManager : NSObject <ItelUserActionDelegate>
+@property (nonatomic,strong) HostItelUser *hostUser;
 +(ItelUserManager*)defaultManager;
 
-//呼叫该用户
--(void)callUser:(ItelUser*)user;
-//短信邀请该用户
--(void)invideUserByMessage:(ItelUser*)user;
+
+
 
 @end

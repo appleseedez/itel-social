@@ -8,13 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "ItelUser.h"
+#import "ItelAction.h"
+@class AddressBook;
 
-@interface ItelBookManager : NSObject
+
+@interface ItelBookManager : NSObject <ItelBookActionDelegate>
+
+
+
+
 +(ItelBookManager*)defaultManager;
-#pragma mark - 增删改查
--(BOOL)addUserToItelBook:(ItelUser*)user;
--(BOOL)delUserFromItelBook:(ItelUser*)user;
--(BOOL)replaceUserInItelBook:(ItelUser*)user;
--(id)searchUsersFromItelBook:(NSString*)search;
+-(AddressBook*)phoneBook;
+
+
 
 @end

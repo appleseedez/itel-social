@@ -74,4 +74,36 @@
     //NSLog(@"newStr = %lu",(unsigned long)[newStr length]);
     return newStr;
 }
+
+//检查是否为手机号码
++(BOOL)checkPhoneNumberIsMobile:(NSString*)phoneNumber{
+   
+        return YES;
+   
+        
+}
+//把手机号码设置为标准11位
++(NSString*)resetPhoneNumber11:(NSString*)phoneNumber;{
+    phoneNumber =[NXInputChecker filterStringWithString:phoneNumber targetString:@" " replaceWithString:@""];
+    phoneNumber =[NXInputChecker filterStringWithString:phoneNumber targetString:@"+86" replaceWithString:@""];
+    phoneNumber =[NXInputChecker filterStringWithString:phoneNumber targetString:@"-" replaceWithString:@""];
+    return phoneNumber;
+    
+}
+#pragma mark - 数组转化为字符串
++(NSString*)changeArrayToString:(NSArray*)array{
+       NSString *result=@"";
+    for (NSString *s in array) {
+        if ([s isKindOfClass:[NSString class]]) {
+            if (![array indexOfObject:s] ) {
+               result = [result stringByAppendingString:s];
+            }
+            else{
+                result=[NSString stringWithFormat:@"%@,%@",result,s];
+            }
+        }
+    }
+     
+    return result;
+}
 @end

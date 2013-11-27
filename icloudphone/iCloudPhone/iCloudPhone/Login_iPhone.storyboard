@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="请输入您的云号码" minimumFontSize="17" id="grd-qb-MPb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="请输入您的云号码" clearsOnBeginEditing="YES" minimumFontSize="17" id="grd-qb-MPb">
                                 <rect key="frame" x="24" y="162" width="273" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="0.0" maxX="14" maxY="14"/>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1060" y="-397"/>
+            <point key="canvasLocation" x="-1062" y="-415"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U2t-7o-MBG">
@@ -253,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjT-pJ-brw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-115" y="948"/>
+            <point key="canvasLocation" x="-123" y="948"/>
         </scene>
         <!--Tel Reset View Controller - 手机短信找回密码-->
         <scene sceneID="n53-aA-22R">
@@ -445,7 +445,7 @@
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="-10" maxX="0.0" maxY="210"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="立刻自拍">
-                                    <color key="titleColor" patternImage="6C32A1E2-921F-47A6-AC7F-C86BD82A1E30" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="BF7D2663-5020-4E71-AF9A-1BB8B6FF6CB6" colorSpace="pattern"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -627,11 +627,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AO1-8I-S87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="307" y="948"/>
+            <point key="canvasLocation" x="283" y="948"/>
         </scene>
     </scenes>
     <resources>
-        <image name="6C32A1E2-921F-47A6-AC7F-C86BD82A1E30" width="256" height="256">
+        <image name="BF7D2663-5020-4E71-AF9A-1BB8B6FF6CB6" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

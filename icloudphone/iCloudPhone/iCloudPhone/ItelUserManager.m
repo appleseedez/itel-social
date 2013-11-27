@@ -15,4 +15,13 @@ static ItelUserManager *manager;
     }
     return manager;
 }
+-(void)setHost:(HostItelUser*)host{
+    self.hostUser=host;
+}
+-(void)callUser:(ItelUser*)user{
+    
+}
+-(void)invideUserByMessage:(ItelUser*)user{
+    
+}
 @end
