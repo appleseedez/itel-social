@@ -41,6 +41,7 @@
 -(void) getItelFriendListResponse:(id)data{
    
     NSArray *list = [data objectForKey:@"list"];
+    
     for (NSDictionary *dic in (NSArray*)list) {
         ItelUser *user=[ItelUser userWithDictionary:dic];
         

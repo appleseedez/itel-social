@@ -80,7 +80,10 @@
             if ([list count]) {
                 for ( NSDictionary *dic in list) {
                     ItelUser *user=[ItelUser userWithDictionary:dic];
+                    if (!user.isFirend) {
                     [self.searchResult addUser:user forKey:user.itelNum];
+                    }
+                   
                     [self.tableView reloadData];
                 }
             }

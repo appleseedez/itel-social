@@ -14,6 +14,7 @@
 @interface PeopleViewController ()
 @property (nonatomic,strong) ItelBook *contacts;
 @property (nonatomic,strong) ItelBook *searchResult;
+
 @end
 static int start =0;
 static BOOL isEnd=0;
@@ -44,6 +45,15 @@ static BOOL isEnd=0;
     NSLog(@"开始搜索:%@",searchBar.text );
     [self search:searchBar.text];
     [self.view endEditing:YES];
+}
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar{
+    [searchBar resignFirstResponder];
+    searchBar.text=nil;
+    [self endSearch];
+}
+-(void)endSearch{
+    self.searchResult=self.contacts;
+    [self.tableVIew reloadData];
 }
 -(void)search:(NSString*)text{
     NSUInteger length=[text length];
@@ -99,18 +109,16 @@ static BOOL isEnd=0;
     return cell;
     
 }
-- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    ItelUser *user=[self.contacts userAtIndex:indexPath.row];
-    UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
-    UserViewController *userVC=[storyBoard instantiateViewControllerWithIdentifier:@"userView"];
-    userVC.user=user;
-    [self.navigationController pushViewController:userVC animated:YES];
-}
+//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+//    ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
+//    UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
+//    UserViewController *userVC=[storyBoard instantiateViewControllerWithIdentifier:@"userView"];
+//    userVC.user=user;
+//    [self.navigationController pushViewController:userVC animated:YES];
+//}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//   dispatch_queue_t getFriend= dispatch_queue_create("getFriend", NULL);
-//    dispatch_async(getFriend, ^{
-//            });
+
     [[ItelAction action] getItelFriendList:0];
 
     
@@ -142,7 +150,7 @@ static BOOL isEnd=0;
     if (isNormal) {
         self.contacts = [[ItelAction action]getFriendBook];
         self.searchResult=self.contacts;
-        //NSLog(@"%@",self.contacts);
+       
         [self.tableVIew reloadData];
     }
     else {

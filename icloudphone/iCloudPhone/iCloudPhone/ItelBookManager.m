@@ -71,11 +71,11 @@ static ItelBookManager *manager;
  */
 -(void)actionWithItelUserInAddressBook:(NSArray*)itelUsers{
     self.phoneBookNoneItel=[self.phoneBook copy];
-    for (NSDictionary *dic in itelUsers) {
-        ItelUser *user=[ItelUser userWithDictionary:dic];
-        [[ItelAction action] inviteItelUserFriend:user.itelNum];
-        
-    }
+//    for (NSDictionary *dic in itelUsers) {
+//        ItelUser *user=[ItelUser userWithDictionary:dic];
+//        [[ItelAction action] inviteItelUserFriend:user.itelNum];
+//        
+//    }
     
 }
 #pragma mark - 获得通讯录
@@ -102,6 +102,8 @@ static ItelBookManager *manager;
 }
 #pragma mark - 重新设置备注
 -(void)resetUserInFriendBook:(ItelUser*)user{
+    
+    
     
         [self.friendBook addUser:user forKey:user.itelNum];
     

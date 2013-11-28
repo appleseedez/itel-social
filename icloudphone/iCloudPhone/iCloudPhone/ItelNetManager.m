@@ -66,8 +66,11 @@ static ItelNetManager *manager=nil;
 
 
 #pragma mark - 添加联系人
-//http://10.0.0.40:8080/CloudCommunity/contact/addItelFriend.json
+static int addcount=0;
+
 -(void)addUser:(NSDictionary*)parameters{
+    addcount++;
+    NSLog(@"一共添加%d次联系人",addcount);
     
     NSString *url=[NSString stringWithFormat:@"%@/contact/addItelFriend.json",server];
     SUCCESS{
@@ -142,7 +145,7 @@ static ItelNetManager *manager=nil;
     
         SUCCESS{
             NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-            NSLog(@"%@",dic);
+       
             if ([dic isKindOfClass:[NSDictionary class]]) {
                     int ret=[[dic objectForKey:@"ret"] intValue];
                 if (ret==0) {
@@ -158,6 +161,9 @@ static ItelNetManager *manager=nil;
                     }
                     
                     id data =[dic objectForKey:@"data"];
+                    NSArray *list=[data objectForKey:@"list"];
+                    NSLog(@"查找陌生人：服务器返回%d条数据",[list count]);
+
                     [[ItelAction action] searchStrangerResponse:data isEnd:isEnd];
                     }
             else {
