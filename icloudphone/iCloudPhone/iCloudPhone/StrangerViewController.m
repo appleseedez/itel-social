@@ -43,10 +43,14 @@
 - (IBAction)popBack:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES];
+    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didAddFriend:) name:@"inviteItelUser" object:nil];
 }
 -(void)didAddFriend:(NSNotification*)notification{

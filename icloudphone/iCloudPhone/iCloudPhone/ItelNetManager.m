@@ -130,14 +130,16 @@ static ItelNetManager *manager=nil;
     else{
         start=start+limit;
     }
-    
+    HostItelUser *host = [[ItelAction action] getHost];
     NSString *url=[NSString stringWithFormat:@"%@/contact/searchUser.json",server];
     //post参数
     NSDictionary *Parameters=@{@"start":[NSNumber numberWithInt:start],
                                @"limit":[NSNumber numberWithInt:limit],
                                @"keyWord":search,
-                               @"token":@"2JSD1I2K4J1K234J41" };
-    NSLog(@"keyword:%@",[Parameters objectForKey:@"keywords"]);
+                               @"token":@"2JSD1I2K4J1K234J41" ,
+                                   @"hostUserId":host.userId
+                               };
+    
         SUCCESS{
             NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
             NSLog(@"%@",dic);
@@ -200,19 +202,21 @@ static ItelNetManager *manager=nil;
     strPhones =[NSString stringWithFormat:@"%@,15799990000,15899990000,15899990001,15699990000,15399990000,15899990022",strPhones];
     
     NSDictionary *parameters=@{@"hostUserId":number, @"numbers":strPhones,@"token":@"123456"};
-    NSLog(@"%@",parameters);
+    //NSLog(@"%@",parameters);
      SUCCESS {
             //NSLog(@"%@",responseObject);
          dispatch_queue_t getPhones=dispatch_queue_create("getPhones", NULL);
          dispatch_async(getPhones, ^{
        
          id dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:Nil];
-         NSLog(@"%@",dic);
+      
             if ([dic isKindOfClass:[NSDictionary class]]) {
                 
                 int ret=[[dic objectForKey:@"ret"] intValue];
                 if (ret==0) {
                     NSArray *itelusers=[dic objectForKey:@"data"];
+                    NSLog(@"匹配通讯录:服务器返回%d条数据",[itelusers count]);
+                    
                     if ([itelusers count]) {
                         ItelAction *action = [ItelAction action];
                         [action checkAddressBookMatchingResponse:itelusers];
@@ -336,12 +340,15 @@ static ItelNetManager *manager=nil;
    
     SUCCESS{
         NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"%@",dic);
+       
         if ([dic isKindOfClass:[NSDictionary class]]) {
             
             int ret=[[dic objectForKey:@"ret"] intValue];
             if (ret==0) {
-               
+                
+                
+                NSArray *list=[[dic objectForKey:@"data"] objectForKey:@"list"];
+                NSLog(@"刷新好友：返回数据%d条",[list count]);
                 id data =[dic objectForKey:@"data"];
                 [[ItelAction action] getItelFriendListResponse:data ];
             }

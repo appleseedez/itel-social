@@ -7,32 +7,35 @@
 //
 
 #import "RootViewController.h"
-
+#import "CustomTabbar.h"
+#import "CustonTarbarItem.h"
 @interface RootViewController ()
-
+@property (nonatomic,strong) CustomTabbar *customTabbar;
 @end
 
 @implementation RootViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    float height=[UIApplication sharedApplication].delegate.window.bounds.size.height;
+    self.customTabbar  =[[CustomTabbar alloc]initWithFrame:CGRectMake(0, height-55, 320, 55)];
+    [self.view addSubview:self.customTabbar];
+    for (CustonTarbarItem *item in self.customTabbar.items) {
+        [item addTarget:self action:@selector(changeController:) forControlEvents:UIControlEventTouchDown];
+    }
+}
+-(void)changeController:(CustonTarbarItem*)sender{
+    for (CustonTarbarItem *item in self.customTabbar.items ) {
+        [item setSelected:NO];
+    }
+     [sender setSelected:YES];
+    int i= [self.customTabbar.items indexOfObject:sender];
+    [self setSelectedIndex:i];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

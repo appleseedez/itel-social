@@ -117,12 +117,12 @@
  */
 -(void) checkAddressBookMatchingItel{
     
-//    dispatch_queue_t getPhones=dispatch_queue_create("getPhones", NULL);
-//    dispatch_async(getPhones, ^{
+    dispatch_queue_t getPhones=dispatch_queue_create("getPhones", NULL);
+    dispatch_async(getPhones, ^{
         NSArray *phones =  [self.itelBookActionDelegate getAddressPhoneNumbers];
         
         [self.itelNetRequestActionDelegate checkAddressBookForItelUser:phones];
-   // });
+    });
     
     
 }
@@ -164,7 +164,7 @@
  */
 -(void) searchStranger:(NSString*)searchMessage newSearch:(BOOL)newSearch{
     [self.itelNetRequestActionDelegate searchUser:searchMessage isNewSearch:newSearch];
-    NSLog(@"%@",searchMessage);
+ 
 }
 //回调
 -(void) searchStrangerResponse:(id)response isEnd:(BOOL)isEnd{

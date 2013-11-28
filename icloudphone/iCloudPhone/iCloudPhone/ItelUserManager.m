@@ -21,7 +21,5 @@ static ItelUserManager *manager;
 -(void)callUser:(ItelUser*)user{
     
 }
--(void)invideUserByMessage:(ItelUser*)user{
-    
-}
+
 @end

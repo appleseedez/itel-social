@@ -10,6 +10,13 @@
 
 @implementation ItelUser
 +(ItelUser*)userWithDictionary:(NSDictionary*)dic{
+    for (NSString *key in [dic allKeys]) {
+       id object = [dic objectForKey:key];
+        if ([object isEqual:[NSNull null]]) {
+            [dic setValue:@"" forKey:key];
+        }
+    }
+    
     ItelUser *user=[[ItelUser alloc] init];
     user.itelNum=[dic objectForKey:@"itel"];
     user.userId=[dic objectForKey:@"user_id"];

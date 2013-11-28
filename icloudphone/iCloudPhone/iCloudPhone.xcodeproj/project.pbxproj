@@ -11,6 +11,8 @@
 		47212EE418446E5400F148C7 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47212EE318446E5400F148C7 /* UserViewController.m */; };
 		47212EE718447F1D00F148C7 /* EditAliasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47212EE618447F1D00F148C7 /* EditAliasViewController.m */; };
 		47212EEA18449FCB00F148C7 /* StrangerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47212EE918449FCB00F148C7 /* StrangerCell.m */; };
+		472B4A631846E45D002971EE /* CustomTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 472B4A621846E45D002971EE /* CustomTabbar.m */; };
+		472B4A661846E4ED002971EE /* CustonTarbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 472B4A651846E4ED002971EE /* CustonTarbarItem.m */; };
 		4732A03018432AEF009AD32D /* ItelUserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4732A02F18432AEF009AD32D /* ItelUserTest.m */; };
 		4732A03418432F61009AD32D /* NXInputChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 478813F41839E6490085224D /* NXInputChecker.m */; };
 		4732A03718432FF0009AD32D /* NXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478813E61839E6490085224D /* NXLoginViewController.m */; };
@@ -112,6 +114,10 @@
 		47212EE618447F1D00F148C7 /* EditAliasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAliasViewController.m; sourceTree = "<group>"; };
 		47212EE818449FCB00F148C7 /* StrangerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrangerCell.h; sourceTree = "<group>"; };
 		47212EE918449FCB00F148C7 /* StrangerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrangerCell.m; sourceTree = "<group>"; };
+		472B4A611846E45D002971EE /* CustomTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabbar.h; sourceTree = "<group>"; };
+		472B4A621846E45D002971EE /* CustomTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabbar.m; sourceTree = "<group>"; };
+		472B4A641846E4ED002971EE /* CustonTarbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustonTarbarItem.h; sourceTree = "<group>"; };
+		472B4A651846E4ED002971EE /* CustonTarbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustonTarbarItem.m; sourceTree = "<group>"; };
 		4732A02F18432AEF009AD32D /* ItelUserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItelUserTest.m; sourceTree = "<group>"; };
 		4734957818458BEA00972FD9 /* StrangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrangerViewController.h; sourceTree = "<group>"; };
 		4734957918458BEA00972FD9 /* StrangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrangerViewController.m; sourceTree = "<group>"; };
@@ -303,6 +309,10 @@
 				47212EE01844429400F148C7 /* ContactCell.m */,
 				47212EE818449FCB00F148C7 /* StrangerCell.h */,
 				47212EE918449FCB00F148C7 /* StrangerCell.m */,
+				472B4A611846E45D002971EE /* CustomTabbar.h */,
+				472B4A621846E45D002971EE /* CustomTabbar.m */,
+				472B4A641846E4ED002971EE /* CustonTarbarItem.h */,
+				472B4A651846E4ED002971EE /* CustonTarbarItem.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -747,10 +757,12 @@
 				479B908718376EF5005D8CCB /* ItelBookManager.m in Sources */,
 				478813D31839C35E0085224D /* FMDatabasePool.m in Sources */,
 				478813DC1839C35E0085224D /* UIWebView+AFNetworking.m in Sources */,
+				472B4A631846E45D002971EE /* CustomTabbar.m in Sources */,
 				479B908D18377696005D8CCB /* ItelUserManager.m in Sources */,
 				479E2BC81835B8B6002D8172 /* AddViewController.m in Sources */,
 				478813CF1839C35E0085224D /* GCDAsyncSocket.m in Sources */,
 				478813FA1839E6490085224D /* NXTelResetViewController.m in Sources */,
+				472B4A661846E4ED002971EE /* CustonTarbarItem.m in Sources */,
 				473F62D718386B04006CAE31 /* AddressBookViewController.m in Sources */,
 				478813D61839C35E0085224D /* AFNetworkActivityIndicatorManager.m in Sources */,
 				478813C81839C35E0085224D /* AFHTTPSessionManager.m in Sources */,

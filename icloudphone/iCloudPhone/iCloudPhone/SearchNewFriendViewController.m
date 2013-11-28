@@ -56,7 +56,10 @@
         ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
         cell.imageView.image=[UIImage imageNamed:@"mockhead"];
         cell.lbItelNumber.text=user.itelNum;
-        cell.lbNickName.text=user.nickName;
+     
+             cell.lbNickName.text=user.nickName;
+        
+      
     }
  
     
@@ -66,6 +69,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(searchResultShow:) name:@"searchStranger" object:nil];
     }
 -(void)searchResultShow:(NSNotification*)notification{
