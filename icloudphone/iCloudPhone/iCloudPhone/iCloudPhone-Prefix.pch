@@ -13,4 +13,12 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <ifaddrs.h>
+    #import <arpa/inet.h>
+    #import "NSData+Byte.h"
+    #define APP_DELEGATE_DEBUG 1
+    #define MANAGER_DEBUG 0
+    #define COMMUNICATOR_DEBUG 0
+    #define ROOT_TABBAR_DEBUG 0
+    #define SIGNAL_MESSAGE 0
 #endif

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "IMManager.h"
 @interface RootViewController : UITabBarController
-
+@property (nonatomic,weak) id <IMManager> manager;
 @end

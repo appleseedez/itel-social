@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
@@ -445,7 +445,7 @@
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="-10" maxX="0.0" maxY="210"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="立刻自拍">
-                                    <color key="titleColor" patternImage="BF7D2663-5020-4E71-AF9A-1BB8B6FF6CB6" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="6A51570E-56A1-46E5-8A8E-F14E4ED2777A" colorSpace="pattern"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -631,7 +631,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BF7D2663-5020-4E71-AF9A-1BB8B6FF6CB6" width="256" height="256">
+        <image name="6A51570E-56A1-46E5-8A8E-F14E4ED2777A" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

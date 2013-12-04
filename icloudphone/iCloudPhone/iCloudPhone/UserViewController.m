@@ -10,6 +10,8 @@
 #import "EditAliasViewController.h"
 #import "ItelAction.h"
 #import "NXImageView.h"
+#import "IMManager.h"
+#import "NSCAppDelegate.h"
 @interface UserViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lbShowName;
 @property (weak, nonatomic) IBOutlet NXImageView *imageView;
@@ -20,6 +22,18 @@
 @end
 
 @implementation UserViewController
+#pragma mark - 打电话
+- (IBAction)callUser:(UIButton *)sender {
+    NSCAppDelegate *appDelegate = (NSCAppDelegate*)[UIApplication sharedApplication].delegate;
+    HostItelUser *host=[[ItelAction action] getHost];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PRESENT_CALLING_VIEW_NOTIFICATION object:nil userInfo:@{
+                                                                                                                       SESSION_INIT_REQ_FIELD_DEST_ACCOUNT_KEY:self.user.itelNum,
+                                                                                                                       SESSION_INIT_REQ_FIELD_SRC_ACCOUNT_KEY:host.itelNum
+                                                                                                                       }];
+    [appDelegate.manager dial:self.user.itelNum];
+    
+}
+
 -(UIWindow*)showWindow{
     if (_showWindow==nil) {
         _showWindow=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
