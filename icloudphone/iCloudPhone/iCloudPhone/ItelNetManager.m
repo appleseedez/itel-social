@@ -76,11 +76,12 @@ static int addcount=0;
     SUCCESS{
         id json=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         if ([json isKindOfClass:[NSDictionary class]]) {
-            //NSLog(@"%@",json);
+            NSLog(@"%@",json);
             NSDictionary *dic=(NSDictionary*)json;
             int ret=[[dic objectForKey:@"ret"] intValue];
             if (ret==0) {
-                [[ItelAction action] inviteItelUserFriendResponse];
+                NSString *itel=[parameters objectForKey:@"targetItel"];
+                [[ItelAction action] inviteItelUserFriendResponse:itel];
                }
             else {
                 NSDictionary *userInfo=@{@"isNormal": @"0",@"reason":[dic objectForKey:@"msg"] };
@@ -207,7 +208,7 @@ static int addcount=0;
     NSString *strPhones=[NXInputChecker changeArrayToString:phones];
     strPhones =[NSString stringWithFormat:@"%@,15799990000,15899990000,15899990001,15699990000,15399990000,15899990022",strPhones];
     
-    NSDictionary *parameters=@{@"hostUserId":number, @"numbers":strPhones,@"token":@"123456"};
+    NSDictionary *parameters=@{@"hostUserId":number, @"numbers":strPhones,@"token":host.token};
     //NSLog(@"%@",parameters);
      SUCCESS {
             //NSLog(@"%@",responseObject);
@@ -244,7 +245,7 @@ static int addcount=0;
 #pragma mark - 添加号码到黑名单
 -(void)addToBlackList:(NSDictionary*)parameters;{
    
-    NSString *url=[NSString stringWithFormat:@"%@/contact/addBlack.json",server];
+    NSString *url=[NSString stringWithFormat:@"%@/blacklist/addItelBlack.json",server];
     SUCCESS{
         
         NSError *error=nil;
@@ -266,6 +267,7 @@ static int addcount=0;
         }
     };
     FAILURE{
+        NSLog(@"%@",error);
         NSDictionary *userInfo=@{@"isNormal": @"0",@"reason":@"网络异常" };
         [[NSNotificationCenter defaultCenter] postNotificationName:@"addBlack" object:nil userInfo:userInfo];
     };
@@ -276,7 +278,7 @@ static int addcount=0;
 
 -(void)removeFromBlackList:(NSDictionary*)parameters;{
    
-    NSString *url=[NSString stringWithFormat:@"%@/contact/removeBlack.json",server];
+    NSString *url=[NSString stringWithFormat:@"%@/blacklist/removeItelBlack.json",server];
     SUCCESS{
         NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         if ([dic isKindOfClass:[NSDictionary class]]) {
@@ -330,15 +332,6 @@ static int addcount=0;
 
 #pragma mark - 刷新好友列表
 
-/*刷新好友列表
- 客户端发送
-    token：
- 成功返回
- data{
- search_result ：[用户1 用户2...]
- }
- 
- */
 -(void)refreshUserList:(NSDictionary*)parameters{
     
     
@@ -372,10 +365,35 @@ static int addcount=0;
     [self jsonGetRequestWithUrl:url andParameters:parameters success:success failure:failure];
     
 }
-
-
-
-
-
-
+#pragma mark - 刷新黑名单列表
+-(void)refreshBlackList:(NSDictionary*)parameters{
+    NSString *url=[NSString stringWithFormat:@"%@/blacklist/loadItelBlackLists.json",server];
+    
+    SUCCESS{
+        NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        
+        if ([dic isKindOfClass:[NSDictionary class]]) {
+            
+            int ret=[[dic objectForKey:@"ret"] intValue];
+            if (ret==0) {
+                
+                
+                NSArray *list=[[dic objectForKey:@"data"] objectForKey:@"list"];
+                NSLog(@"刷新黑名单：返回数据%d条",[list count]);
+                id data =[dic objectForKey:@"data"];
+                [[ItelAction action] getItelBlackListResponse:data];
+            }
+            else {
+                NSDictionary *userInfo=@{@"isNormal": @"0",@"reason":@"解析异常" };
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"getBlackList" object:nil userInfo:userInfo];
+            }
+        }//如果请求失败 则执行failure
+    };
+    FAILURE {
+        NSLog(@"%@",error);
+        NSDictionary *userInfo=@{@"isNormal": @"0",@"reason":@"网络异常" };
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"getBlackList" object:nil userInfo:userInfo];
+    };
+    [self jsonGetRequestWithUrl:url andParameters:parameters success:success failure:failure];
+}
 @end

@@ -15,15 +15,62 @@ static ItelBookManager *manager;
 @property  (nonatomic,strong)AddressBook *phoneBook;  //电话联系人列表
 @property  (nonatomic,strong)ItelBook *phoneBookItel; //电话联系人中有itel的用户列表
 @property  (nonatomic,strong)ItelBook *phoneBookNoneItel; //电话联系人中没有itel用户的列表
+@property (nonatomic,strong)NSMutableOrderedSet *addedItels;
 @end
+
 @implementation ItelBookManager
+#define PATH [NSHomeDirectory() stringByAppendingString:@"/users/"]
 +(ItelBookManager*)defaultManager{
     
     if (manager==nil) {
         manager=[[ItelBookManager alloc]init];
+        
     }
     
     return manager;
+}
+#pragma mark - 添加用户到等待确认列表
+-(void)addItelUserIntoAddedList:(NSString *)itel{
+    
+    
+        [self.addedItels addObject:itel];
+        [self saveAddedItels];
+        NSLog(@"%@",self.addedItels);
+   
+    
+}
+#pragma mark - 删除用户从等待确认列表
+-(void)delItelUserIntoAddedList:(NSString *)itel{
+    [self.addedItels removeObject:itel];
+    [self saveAddedItels];
+    NSLog(@"%@",self.addedItels);
+    
+    
+}
+-(NSMutableOrderedSet*)addedItels{
+    if (_addedItels==nil) {
+       NSString *hostNum = [[ItelAction action] getHost].itelNum;
+        NSString *path=[PATH stringByAppendingString:hostNum];
+        _addedItels=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        if (_addedItels==nil) {
+            _addedItels=[[NSMutableOrderedSet alloc]init];
+        }
+    }
+    return _addedItels;
+}
+-(BOOL)checkItelInAddedList:(NSString*)itel{
+    for (NSString *added in self.addedItels) {
+        if ([itel isEqualToString:added]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+-(void)saveAddedItels{
+    NSString *hostNum = [[ItelAction action] getHost].itelNum;
+    NSString *path=[PATH stringByAppendingString:hostNum];
+    [NSKeyedArchiver archiveRootObject:self.addedItels toFile:path];
+    
 }
 -(ItelBook*)blackBook{
     if (_blackBook==nil) {

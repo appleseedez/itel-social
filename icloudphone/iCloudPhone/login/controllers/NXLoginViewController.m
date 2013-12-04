@@ -88,6 +88,8 @@
                 NSCAppDelegate *delegate =    [UIApplication sharedApplication].delegate;
                 [delegate changeRootViewController:RootViewControllerMain];
                 [[ItelAction action] checkAddressBookMatchingItel];
+                //[[ItelAction action] delFriendFromBlack:@"1000002"];
+                [[ItelAction action] getItelBlackList:0];
             }
             else {
                 [self.actWaitingToLogin stopAnimating];

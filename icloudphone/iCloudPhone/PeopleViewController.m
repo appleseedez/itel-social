@@ -14,18 +14,18 @@
 @interface PeopleViewController ()
 @property (nonatomic,strong) ItelBook *contacts;
 @property (nonatomic,strong) ItelBook *searchResult;
-
+@property (nonatomic,strong) UIPanGestureRecognizer *gestreRecognizer;
 @end
 static int start =0;
 static BOOL isEnd=0;
 @implementation PeopleViewController
 
 
-
+static float changelimit=100.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.gestreRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panRecognizer:)];
 	// Do any additional setup after loading the view.
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -40,7 +40,56 @@ static BOOL isEnd=0;
     }
     return _searchResult;
 }
-
+-(void)panRecognizer:(UIPanGestureRecognizer*)recognizer{
+    CGFloat translation=[recognizer translationInView:recognizer.view ].x;
+    //NSLog(@"手势滑动：%f",translation);
+    //NSLog(@"%f",self.backView.frame.size.height);
+    recognizer.maximumNumberOfTouches=1;
+    ContactCell *cell=((ContactCellTopView*)recognizer.view).cell;
+    if (recognizer.state==UIGestureRecognizerStateChanged) {
+        if ((recognizer.view.frame.origin.x>=-changelimit)&&(recognizer.view.frame.origin.x<=changelimit)) {
+            
+            CGFloat transX=0;
+            if (translation>=changelimit) {
+                transX=changelimit   ;
+            }else if(translation<=-changelimit){
+                transX=-changelimit;
+            }
+            else{
+                transX=translation;
+            }
+            
+            [recognizer.view setTransform:CGAffineTransformMakeTranslation( transX-cell.currenTranslate, 0)];
+            
+            
+            //self.topView.frame=CGRectMake(self.topView.frame.origin.x+transX, self.topView.frame.origin.y,  self.topView.frame.size.width , self.topView.frame.size.height);
+        }
+        
+        
+        
+    }
+    else if(recognizer.state==UIGestureRecognizerStateEnded){
+        [UIView beginAnimations:@"back" context:nil];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        [UIView setAnimationDelay:0.2];
+        recognizer.view.frame=recognizer.view.superview.bounds;
+        [UIView commitAnimations];
+        if (translation>changelimit) {
+            NSLog(@"打电话");
+            self.gestreRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panRecognizer:)];
+            cell.currenTranslate=cell.currenTranslate-changelimit;
+        }
+        else if (translation<-changelimit){
+            NSLog(@"发短信");
+            translation=0;
+            cell.currenTranslate=cell.currenTranslate+changelimit;
+        }
+        
+    }
+    
+    
+    
+}
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSLog(@"开始搜索:%@",searchBar.text );
     [self search:searchBar.text];
@@ -88,7 +137,7 @@ static BOOL isEnd=0;
     return nil;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 80;
 }
 - (ContactCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -99,7 +148,8 @@ static BOOL isEnd=0;
     }
     if ([[self.searchResult getAllKeys] count]>indexPath.row) {
         ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
-        
+        cell.backView.frame=cell.bounds;
+        cell.topView.frame=cell.bounds;
         cell.imageView.image=[UIImage imageNamed:@"头像.jpg"];
         cell.lbAlias.text=user.remarkName;
         cell.lbNickName.text=user.nickName;
@@ -109,13 +159,22 @@ static BOOL isEnd=0;
     return cell;
     
 }
-//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-//    ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
-//    UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
-//    UserViewController *userVC=[storyBoard instantiateViewControllerWithIdentifier:@"userView"];
-//    userVC.user=user;
-//    [self.navigationController pushViewController:userVC animated:YES];
-//}
+
+- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    ContactCell *cell=(ContactCell*)[tableView cellForRowAtIndexPath:indexPath];
+    [cell.topView removeGestureRecognizer:self.gestreRecognizer];
+}
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ContactCell *cell=(ContactCell*)[tableView cellForRowAtIndexPath:indexPath];
+    [cell.topView addGestureRecognizer:self.gestreRecognizer];
+    
+    ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
+    UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
+    UserViewController *userVC=[storyBoard instantiateViewControllerWithIdentifier:@"userView"];
+    userVC.user=user;
+    [self.navigationController pushViewController:userVC animated:YES];
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 

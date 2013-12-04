@@ -11,6 +11,9 @@
 		47212EE418446E5400F148C7 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47212EE318446E5400F148C7 /* UserViewController.m */; };
 		47212EE718447F1D00F148C7 /* EditAliasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47212EE618447F1D00F148C7 /* EditAliasViewController.m */; };
 		47212EEA18449FCB00F148C7 /* StrangerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47212EE918449FCB00F148C7 /* StrangerCell.m */; };
+		47225148184D804D00C44857 /* NewFriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47225147184D804D00C44857 /* NewFriendListViewController.m */; };
+		472251CF184DB01400C44857 /* ContactCellTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 472251CE184DB01400C44857 /* ContactCellTopView.m */; };
+		472251D2184DBDF000C44857 /* NXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 472251D1184DBDF000C44857 /* NXImageView.m */; };
 		472B4A631846E45D002971EE /* CustomTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 472B4A621846E45D002971EE /* CustomTabbar.m */; };
 		472B4A661846E4ED002971EE /* CustonTarbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 472B4A651846E4ED002971EE /* CustonTarbarItem.m */; };
 		4732A03018432AEF009AD32D /* ItelUserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4732A02F18432AEF009AD32D /* ItelUserTest.m */; };
@@ -114,6 +117,12 @@
 		47212EE618447F1D00F148C7 /* EditAliasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAliasViewController.m; sourceTree = "<group>"; };
 		47212EE818449FCB00F148C7 /* StrangerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrangerCell.h; sourceTree = "<group>"; };
 		47212EE918449FCB00F148C7 /* StrangerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrangerCell.m; sourceTree = "<group>"; };
+		47225146184D804D00C44857 /* NewFriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFriendListViewController.h; sourceTree = "<group>"; };
+		47225147184D804D00C44857 /* NewFriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFriendListViewController.m; sourceTree = "<group>"; };
+		472251CD184DB01400C44857 /* ContactCellTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCellTopView.h; sourceTree = "<group>"; };
+		472251CE184DB01400C44857 /* ContactCellTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCellTopView.m; sourceTree = "<group>"; };
+		472251D0184DBDF000C44857 /* NXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXImageView.h; sourceTree = "<group>"; };
+		472251D1184DBDF000C44857 /* NXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXImageView.m; sourceTree = "<group>"; };
 		472B4A611846E45D002971EE /* CustomTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabbar.h; sourceTree = "<group>"; };
 		472B4A621846E45D002971EE /* CustomTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabbar.m; sourceTree = "<group>"; };
 		472B4A641846E4ED002971EE /* CustonTarbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustonTarbarItem.h; sourceTree = "<group>"; };
@@ -305,8 +314,12 @@
 			children = (
 				473F62DE1838820D006CAE31 /* AddressBookCell.h */,
 				473F62DF1838820D006CAE31 /* AddressBookCell.m */,
+				472251D0184DBDF000C44857 /* NXImageView.h */,
+				472251D1184DBDF000C44857 /* NXImageView.m */,
 				47212EDF1844429400F148C7 /* ContactCell.h */,
 				47212EE01844429400F148C7 /* ContactCell.m */,
+				472251CD184DB01400C44857 /* ContactCellTopView.h */,
+				472251CE184DB01400C44857 /* ContactCellTopView.m */,
 				47212EE818449FCB00F148C7 /* StrangerCell.h */,
 				47212EE918449FCB00F148C7 /* StrangerCell.m */,
 				472B4A611846E45D002971EE /* CustomTabbar.h */,
@@ -528,6 +541,8 @@
 				479E2BC71835B8B6002D8172 /* AddViewController.m */,
 				479B90771837660B005D8CCB /* SearchNewFriendViewController.h */,
 				479B90781837660B005D8CCB /* SearchNewFriendViewController.m */,
+				47225146184D804D00C44857 /* NewFriendListViewController.h */,
+				47225147184D804D00C44857 /* NewFriendListViewController.m */,
 				479C9C1F1834F02800DE40D8 /* ContentViewController.h */,
 				479C9C201834F02800DE40D8 /* ContentViewController.m */,
 				479DC496183A4CC100C3F3F2 /* RootViewController.h */,
@@ -667,9 +682,9 @@
 		47B89DC91834D40000022FE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = NSC;
+				CLASSPREFIX = NX;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = nsc;
+				ORGANIZATIONNAME = NX;
 				TargetAttributes = {
 					47B89DD01834D40000022FE5 = {
 						DevelopmentTeam = KAH6228XJ2;
@@ -737,6 +752,7 @@
 				478813D01839C35E0085224D /* GCDAsyncUdpSocket.m in Sources */,
 				478813D11839C35E0085224D /* FMDatabase.m in Sources */,
 				478813CA1839C35E0085224D /* AFSecurityPolicy.m in Sources */,
+				47225148184D804D00C44857 /* NewFriendListViewController.m in Sources */,
 				479DC498183A4CC100C3F3F2 /* RootViewController.m in Sources */,
 				478813DE1839C35E0085224D /* Underscore.m in Sources */,
 				478813D21839C35E0085224D /* FMDatabaseAdditions.m in Sources */,
@@ -753,6 +769,7 @@
 				479B90791837660B005D8CCB /* SearchNewFriendViewController.m in Sources */,
 				478813E01839C35E0085224D /* USDictionaryWrapper.m in Sources */,
 				479C9C221834F02800DE40D8 /* ContentViewController.m in Sources */,
+				472251D2184DBDF000C44857 /* NXImageView.m in Sources */,
 				478813DD1839C35E0085224D /* Underscore+Functional.m in Sources */,
 				479B908718376EF5005D8CCB /* ItelBookManager.m in Sources */,
 				478813D31839C35E0085224D /* FMDatabasePool.m in Sources */,
@@ -770,6 +787,7 @@
 				478813FB1839E6490085224D /* NXMockServer.m in Sources */,
 				478813F51839E6490085224D /* NXInputNewPasswordViewController.m in Sources */,
 				478813DB1839C35E0085224D /* UIProgressView+AFNetworking.m in Sources */,
+				472251CF184DB01400C44857 /* ContactCellTopView.m in Sources */,
 				479DC49B183A4D3F00C3F3F2 /* PeopleViewController.m in Sources */,
 				47B89DE51834D40000022FE5 /* NSCAppDelegate.m in Sources */,
 				479B907E18376DA1005D8CCB /* ItelAction.m in Sources */,
@@ -862,6 +880,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -878,7 +897,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos7.0;
 			};
@@ -901,6 +920,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -911,7 +931,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos7.0;
 				VALIDATE_PRODUCT = YES;
@@ -928,7 +948,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCloudPhone/iCloudPhone-Prefix.pch";
 				INFOPLIST_FILE = "iCloudPhone/iCloudPhone-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -946,7 +966,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCloudPhone/iCloudPhone-Prefix.pch";
 				INFOPLIST_FILE = "iCloudPhone/iCloudPhone-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

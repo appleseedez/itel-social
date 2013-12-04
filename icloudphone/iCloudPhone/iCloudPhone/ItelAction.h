@@ -29,6 +29,12 @@
 -(void)getAddressBook;
 //获得联系人列表
 -(ItelBook*)friendBook;
+//查询用户在等待确认列表
+-(BOOL)checkItelInAddedList:(NSString*)itel;
+//添加用户到等待确认列表
+-(void)addItelUserIntoAddedList:(NSString *)itel;
+//删除用户从等待确认列表
+-(void)delItelUserIntoAddedList:(NSString *)itel;
 @end
 
 #pragma  mark - 用户操作协议
@@ -69,6 +75,8 @@
 -(void)editUserRemark:(NSString*)newRemark user:(NSDictionary*)parameters;
 //刷新好友列表
 -(void)refreshUserList:(NSDictionary*)parameters;
+//刷新黑名单列表
+-(void)refreshBlackList:(NSDictionary*)parameters;
 @end
 @interface ItelAction : NSObject
 @property (nonatomic,weak) id <ItelBookActionDelegate> itelBookActionDelegate;
@@ -89,7 +97,7 @@
 -(void) searchStrangerResponse:(id)response isEnd:(BOOL)isEnd;
 //添加好友
 -(void) inviteItelUserFriend:(NSString*)itel;
--(void) inviteItelUserFriendResponse;
+-(void) inviteItelUserFriendResponse:(NSString*)itel;
 //删除好友
 -(void) delFriendFromItelBook:(NSString*)itel;
 -(void) delFriendFromItelBookResponse:(NSString*)itel;
@@ -105,10 +113,17 @@
 //刷新itel好友列表
 -(void) getItelFriendList:(NSInteger)start;
 -(void) getItelFriendListResponse:(id)data;
+//刷新黑名单列表
+-(void) getItelBlackList:(NSInteger)start;
+-(void) getItelBlackListResponse:(id)data;
 //获得通讯录
 -(void) getAddressBook;
 //获得itel好友列表
 -(ItelBook*) getFriendBook;
+
+
+//查询是否已经添加该联系人
+-(BOOL)checkItelAdded:(NSString*)itel;
 
 
 @end

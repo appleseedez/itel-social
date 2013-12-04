@@ -51,20 +51,53 @@
     
     [self NotifyForNormalResponse:@"getItelList" parameters:data];
 }
+#pragma mark - 刷新黑名单列表
+//刷新黑名单列表
+-(void) getItelBlackList:(NSInteger)start{
+    HostItelUser *hostUser =  [self.itelUserActionDelegate hostUser];
+    
+    NSDictionary *parameters = @{@"keyWord":hostUser.userId ,@"start":[NSNumber numberWithInteger:start],@"token":hostUser.token,@"limit":[NSNumber numberWithInteger:20]};
+    [self.itelNetRequestActionDelegate refreshBlackList:parameters];
+}
+-(void) getItelBlackListResponse:(id)data{
+    NSArray *list = [data objectForKey:@"list"];
+    
+    for (NSDictionary *dic in (NSArray*)list) {
+        ItelUser *user=[ItelUser userWithDictionary:dic];
+        
+        
+        [self.itelBookActionDelegate resetUserInBlackBook:user];
+    }
+    
+    [self NotifyForNormalResponse:@"getBlackList" parameters:data];
+}
 #pragma mark - 添加一个好友
 /*
   1 获取机主 token  itel userID
   2 发送请求
  */
+//查询是否已经添加该联系人
+-(BOOL)checkItelAdded:(NSString*)itel{
+    return [self.itelBookActionDelegate checkItelInAddedList:itel];
+}
 -(void)inviteItelUserFriend:(NSString*)itel{
+    if (![self checkItelAdded:itel]) {
+        
+    
      HostItelUser *hostUser =  [self.itelUserActionDelegate hostUser];
     NSDictionary *parameters = @{@"userId":hostUser.userId ,@"hostItel":hostUser.itelNum,@"targetItel":itel,@"token":hostUser.token};
     
     [self.itelNetRequestActionDelegate addUser:parameters];
+    }
+    else {
+        NSDictionary *userInfo=@{@"isNormal": @"0",@"reason":@"该用户已经添加过了" };
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"inviteItelUser" object:nil userInfo:userInfo];
+    }
 }
 //回调
--(void)inviteItelUserFriendResponse{
-    [self NotifyForNormalResponse:@"inviteItelUser" parameters:nil];
+-(void)inviteItelUserFriendResponse:(NSString*)itel{
+    [self.itelBookActionDelegate addItelUserIntoAddedList:itel];
+    [self NotifyForNormalResponse:@"inviteItelUser" parameters:itel];
 }
 #pragma mark - 删除好友
 /*
@@ -79,7 +112,7 @@
 }
 //回调 1通知viewController  2从列表中删除
 -(void)delFriendFromItelBookResponse:(NSString*)itel{
-    
+    [self.itelBookActionDelegate delItelUserIntoAddedList:itel];
     [self.itelBookActionDelegate delUserFromFriendBook:itel];
     [self NotifyForNormalResponse:@"delItelUser" parameters:nil];
 }

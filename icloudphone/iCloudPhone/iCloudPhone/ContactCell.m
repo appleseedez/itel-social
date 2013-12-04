@@ -9,24 +9,31 @@
 #import "ContactCell.h"
 
 @interface ContactCell ()
-@property (nonatomic,strong) UIView *backView;
-@property (nonatomic,strong) UIView *topView;
-@property (nonatomic,strong) UIPanGestureRecognizer *gestreRecognizer;
+
 @end
 
 @implementation ContactCell
-static float changelimit=100;
+
+
 -(UIView*)backView{
     if (_backView==nil) {
-        _backView=[[UIView alloc]initWithFrame:self.contentView.bounds];
+        _backView=[[UIView alloc]initWithFrame:self.bounds];
         [self.contentView addSubview:_backView];
+        UILabel *delPhone=[[UILabel alloc] initWithFrame:CGRectMake(3, 20, 90, 30)];
+        delPhone.text=@"打电话";
+        [_backView addSubview:delPhone];
+        
+        UILabel *sendMes=[[UILabel alloc] initWithFrame:CGRectMake(320-3-90, 20, 90, 30)];
+        sendMes.text=@"发短信";
+        [_backView addSubview:sendMes];
+        
         _backView.backgroundColor=[UIColor redColor];
     }
     return _backView;
 }
 -(UIView*)topView{
     if (_topView==nil) {
-        _topView=[[UIView alloc]initWithFrame:self.bounds];
+        _topView=[[ContactCellTopView alloc]initWithFrame:self.bounds];
         [self.contentView addSubview:_topView];
         _topView.backgroundColor = [UIColor whiteColor];
     }
@@ -36,9 +43,10 @@ static float changelimit=100;
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     [self backView];
-    self.gestreRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panRecognizer:)];
+    self.contentView.frame=self.bounds;
     
-    [self.topView addGestureRecognizer:self.gestreRecognizer];
+    
+    //[self.topView addGestureRecognizer:self.gestreRecognizer];
     if (self) {
         self.lbNickName=[[UILabel alloc]init];
         self.lbNickName.frame=CGRectMake(80, 3, 80, 25);
@@ -54,49 +62,14 @@ static float changelimit=100;
         self.lbAlias.numberOfLines=0;
         [self.lbAlias setTextColor:[UIColor grayColor]];
         [self.topView addSubview:self.lbAlias];
-        
+        self.topView.cell=self;
         [self.topView addSubview:self.imageView];
-        
+        self.currenTranslate=0;
     }
     return self;
 }
--(void)panRecognizer:(UIPanGestureRecognizer*)recognizer{
-   CGPoint translation=[recognizer translationInView: self.topView ];
-    if (recognizer.state==UIGestureRecognizerStateChanged) {
-        if ((self.topView.frame.origin.x>=-changelimit)&&(self.topView.frame.origin.x<=changelimit)) {
-            
-            CGFloat transX=0;
-            if (translation.x>=changelimit) {
-                transX=changelimit;
-            }else if(translation.x<=-changelimit){
-                transX=-changelimit;
-            }
-            else{
-                transX=translation.x;
-            }
-            recognizer.view.transform=CGAffineTransformMakeTranslation(transX, 0);
-        }
-        
-        
-        
-    }
-   else if(recognizer.state==UIGestureRecognizerStateEnded){
-       [UIView beginAnimations:@"back" context:nil];
-       [UIView setAnimationDelay:0.2];
-       self.topView.frame=self.contentView.bounds;
-       [UIView commitAnimations];
-       if (translation.x>changelimit) {
-           NSLog(@"打电话");
-       }
-       else if (translation.x<-changelimit){
-           NSLog(@"发短信");
-       }
-           
-    }
 
-   
-    
-}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
    [super setSelected:selected animated:animated];
