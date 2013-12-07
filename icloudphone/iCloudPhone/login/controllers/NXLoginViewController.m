@@ -4,7 +4,7 @@
 //
 //  Created by nsc on 13-11-5.
 //  Copyright (c) 2013年 itelland. All rights reserved.
-//
+//@"http://211.149.144.15:9000/CloudCommunity/login.json"
 
 #import "NXLoginViewController.h"
 #import "NXInputChecker.h"
@@ -62,7 +62,7 @@
     //这是退出键盘的 不用理它
     [self.view endEditing:YES];
    
-    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://10.0.0.40:8080/CloudCommunity/login.json"]];
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://211.149.144.15:9000/CloudCommunity/login.json"]];
     
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
@@ -85,11 +85,16 @@
                 [[ItelAction action] setHostItelUser:host];
                 [self.actWaitingToLogin stopAnimating];
                 self.txtInuptCheckMessage.text = @"登录成功";
-                NSCAppDelegate *delegate =    [UIApplication sharedApplication].delegate;
+
+                NSCAppDelegate *delegate =   (NSCAppDelegate*) [UIApplication sharedApplication].delegate;
                 [delegate changeRootViewController:RootViewControllerMain];
+                
                 [[ItelAction action] checkAddressBookMatchingItel];
+                [delegate.manager setup];
+                [delegate.manager setMyAccount:host.itelNum];
+                [delegate.manager connectToSignalServer];
                 //[[ItelAction action] delFriendFromBlack:@"1000002"];
-                [[ItelAction action] getItelBlackList:0];
+                //[[ItelAction action] getItelBlackList:0];
             }
             else {
                 [self.actWaitingToLogin stopAnimating];

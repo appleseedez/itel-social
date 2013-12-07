@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface NXImageView : UIImageView
--(void)setRect;
+-(void)setRect:(CGFloat)borderWidth cornerRadius:(CGFloat)cornerRadius borderColor:(UIColor*)borderColor;
 @end

@@ -27,6 +27,17 @@
 		473F62E01838820D006CAE31 /* AddressBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 473F62DF1838820D006CAE31 /* AddressBookCell.m */; };
 		473F62E3183889B0006CAE31 /* AddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 473F62E2183889B0006CAE31 /* AddressBook.m */; };
 		4783A24918404AEF0046871C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4783A24818404AEF0046871C /* MessageUI.framework */; };
+		478594B6185026FF00AFF6BF /* itel2_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594AB185026FF00AFF6BF /* itel2_3.png */; };
+		478594B7185026FF00AFF6BF /* itel2_3a.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594AC185026FF00AFF6BF /* itel2_3a.png */; };
+		478594B8185026FF00AFF6BF /* tab_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594AD185026FF00AFF6BF /* tab_1.png */; };
+		478594B9185026FF00AFF6BF /* tab_1a.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594AE185026FF00AFF6BF /* tab_1a.png */; };
+		478594BA185026FF00AFF6BF /* tab_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594AF185026FF00AFF6BF /* tab_2.png */; };
+		478594BB185026FF00AFF6BF /* tab_2a.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594B0185026FF00AFF6BF /* tab_2a.png */; };
+		478594BC185026FF00AFF6BF /* tab_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594B1185026FF00AFF6BF /* tab_4.png */; };
+		478594BD185026FF00AFF6BF /* tab_4a.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594B2185026FF00AFF6BF /* tab_4a.png */; };
+		478594BE185026FF00AFF6BF /* tab_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594B3185026FF00AFF6BF /* tab_5.png */; };
+		478594BF185026FF00AFF6BF /* tab_5a.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594B4185026FF00AFF6BF /* tab_5a.png */; };
+		478594C0185026FF00AFF6BF /* tab_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 478594B5185026FF00AFF6BF /* tab_bar.png */; };
 		478813C61839C35E0085224D /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 478813891839C35E0085224D /* AFHTTPRequestOperation.m */; };
 		478813C71839C35E0085224D /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4788138B1839C35E0085224D /* AFHTTPRequestOperationManager.m */; };
 		478813C81839C35E0085224D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4788138D1839C35E0085224D /* AFHTTPSessionManager.m */; };
@@ -138,6 +149,10 @@
 		47CDFFB4184ED80800673C2B /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CDFFB1184ED80800673C2B /* GCDAsyncUdpSocket.m */; };
 		47CDFFB5184ED80800673C2B /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CDFFB1184ED80800673C2B /* GCDAsyncUdpSocket.m */; };
 		47CDFFB6184ED91F00673C2B /* libGCDSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CDFF8A184ED7CE00673C2B /* libGCDSocket.a */; };
+		47E05DC018517418009FDCED /* searchuser.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E05DBE18517418009FDCED /* searchuser.png */; };
+		47E05DC118517418009FDCED /* checkAddress.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E05DBF18517418009FDCED /* checkAddress.png */; };
+		47E05DC318519C9C009FDCED /* 头像.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E05DC218519C9C009FDCED /* 头像.png */; };
+		47E05DC51851A2CE009FDCED /* 详细按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E05DC41851A2CE009FDCED /* 详细按钮.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +217,17 @@
 		473F62E1183889B0006CAE31 /* AddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBook.h; sourceTree = "<group>"; };
 		473F62E2183889B0006CAE31 /* AddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBook.m; sourceTree = "<group>"; };
 		4783A24818404AEF0046871C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		478594AB185026FF00AFF6BF /* itel2_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itel2_3.png; sourceTree = "<group>"; };
+		478594AC185026FF00AFF6BF /* itel2_3a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itel2_3a.png; sourceTree = "<group>"; };
+		478594AD185026FF00AFF6BF /* tab_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_1.png; sourceTree = "<group>"; };
+		478594AE185026FF00AFF6BF /* tab_1a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_1a.png; sourceTree = "<group>"; };
+		478594AF185026FF00AFF6BF /* tab_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_2.png; sourceTree = "<group>"; };
+		478594B0185026FF00AFF6BF /* tab_2a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_2a.png; sourceTree = "<group>"; };
+		478594B1185026FF00AFF6BF /* tab_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_4.png; sourceTree = "<group>"; };
+		478594B2185026FF00AFF6BF /* tab_4a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_4a.png; sourceTree = "<group>"; };
+		478594B3185026FF00AFF6BF /* tab_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_5.png; sourceTree = "<group>"; };
+		478594B4185026FF00AFF6BF /* tab_5a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_5a.png; sourceTree = "<group>"; };
+		478594B5185026FF00AFF6BF /* tab_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar.png; sourceTree = "<group>"; };
 		478813881839C35E0085224D /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		478813891839C35E0085224D /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		4788138A1839C35E0085224D /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -392,6 +418,10 @@
 		47CDFFAF184ED80800673C2B /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		47CDFFB0184ED80800673C2B /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		47CDFFB1184ED80800673C2B /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		47E05DBE18517418009FDCED /* searchuser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchuser.png; sourceTree = "<group>"; };
+		47E05DBF18517418009FDCED /* checkAddress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkAddress.png; sourceTree = "<group>"; };
+		47E05DC218519C9C009FDCED /* 头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像.png"; sourceTree = "<group>"; };
+		47E05DC41851A2CE009FDCED /* 详细按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详细按钮.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +518,25 @@
 				472B4A651846E4ED002971EE /* CustonTarbarItem.m */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		478594AA185026FF00AFF6BF /* 预切片 */ = {
+			isa = PBXGroup;
+			children = (
+				47E05DBD18517403009FDCED /* qq截图 */,
+				478594AB185026FF00AFF6BF /* itel2_3.png */,
+				478594AC185026FF00AFF6BF /* itel2_3a.png */,
+				478594AD185026FF00AFF6BF /* tab_1.png */,
+				478594AE185026FF00AFF6BF /* tab_1a.png */,
+				478594AF185026FF00AFF6BF /* tab_2.png */,
+				478594B0185026FF00AFF6BF /* tab_2a.png */,
+				478594B1185026FF00AFF6BF /* tab_4.png */,
+				478594B2185026FF00AFF6BF /* tab_4a.png */,
+				478594B3185026FF00AFF6BF /* tab_5.png */,
+				478594B4185026FF00AFF6BF /* tab_5a.png */,
+				478594B5185026FF00AFF6BF /* tab_bar.png */,
+			);
+			path = "预切片";
 			sourceTree = "<group>";
 		};
 		478813861839C35E0085224D /* vendors */ = {
@@ -770,9 +819,12 @@
 			children = (
 				47B89DDC1834D40000022FE5 /* iCloudPhone-Info.plist */,
 				47B89DDD1834D40000022FE5 /* InfoPlist.strings */,
+				478594AA185026FF00AFF6BF /* 预切片 */,
 				47B89DE61834D40000022FE5 /* iCloudPhone.storyboard */,
 				478814061839E7250085224D /* Login_iPhone.storyboard */,
 				479DC49C183A544200C3F3F2 /* 广告.png */,
+				47E05DC41851A2CE009FDCED /* 详细按钮.png */,
+				47E05DC218519C9C009FDCED /* 头像.png */,
 				479C9C281835019D00DE40D8 /* 头像.jpg */,
 				4788140A1839ED7F0085224D /* itel.png */,
 				478814041839E7120085224D /* mockhead.png */,
@@ -954,6 +1006,15 @@
 			path = asyncSocket;
 			sourceTree = "<group>";
 		};
+		47E05DBD18517403009FDCED /* qq截图 */ = {
+			isa = PBXGroup;
+			children = (
+				47E05DBE18517418009FDCED /* searchuser.png */,
+				47E05DBF18517418009FDCED /* checkAddress.png */,
+			);
+			name = "qq截图";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1075,14 +1136,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				479DC49D183A544200C3F3F2 /* 广告.png in Resources */,
+				478594C0185026FF00AFF6BF /* tab_bar.png in Resources */,
+				478594B9185026FF00AFF6BF /* tab_1a.png in Resources */,
+				478594B7185026FF00AFF6BF /* itel2_3a.png in Resources */,
+				478594BD185026FF00AFF6BF /* tab_4a.png in Resources */,
 				479C9C291835019D00DE40D8 /* 头像.jpg in Resources */,
+				47E05DC51851A2CE009FDCED /* 详细按钮.png in Resources */,
+				478594B6185026FF00AFF6BF /* itel2_3.png in Resources */,
 				4788140B1839ED7F0085224D /* itel.png in Resources */,
+				478594BC185026FF00AFF6BF /* tab_4.png in Resources */,
+				478594BA185026FF00AFF6BF /* tab_2.png in Resources */,
+				47E05DC318519C9C009FDCED /* 头像.png in Resources */,
 				479B907618371DD7005D8CCB /* iCloudPhone-Info.plist in Resources */,
 				479C9C271834FA0C00DE40D8 /* iCloudPhone.storyboard in Resources */,
+				47E05DC018517418009FDCED /* searchuser.png in Resources */,
+				47E05DC118517418009FDCED /* checkAddress.png in Resources */,
 				47B89DED1834D40000022FE5 /* Images.xcassets in Resources */,
+				478594BF185026FF00AFF6BF /* tab_5a.png in Resources */,
+				478594BB185026FF00AFF6BF /* tab_2a.png in Resources */,
 				47B89DDF1834D40000022FE5 /* InfoPlist.strings in Resources */,
 				478814071839E7250085224D /* Login_iPhone.storyboard in Resources */,
 				478814051839E7120085224D /* mockhead.png in Resources */,
+				478594B8185026FF00AFF6BF /* tab_1.png in Resources */,
+				478594BE185026FF00AFF6BF /* tab_5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,6 +1641,7 @@
 				47CDFFA8184ED7CF00673C2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47CDFFA9184ED7CF00673C2B /* Build configuration list for PBXNativeTarget "GCDSocketTests" */ = {
 			isa = XCConfigurationList;
@@ -1573,6 +1650,7 @@
 				47CDFFAB184ED7CF00673C2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

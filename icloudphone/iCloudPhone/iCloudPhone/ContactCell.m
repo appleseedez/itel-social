@@ -49,22 +49,27 @@
     //[self.topView addGestureRecognizer:self.gestreRecognizer];
     if (self) {
         self.lbNickName=[[UILabel alloc]init];
-        self.lbNickName.frame=CGRectMake(80, 3, 80, 25);
+        self.lbNickName.frame=CGRectMake(65, 6, 80, 25);
         self.lbNickName.backgroundColor=[UIColor clearColor];
         
         [self.topView addSubview:self.lbNickName];
         
-        self.lbAlias=[[UILabel alloc] init];
-        self.lbAlias.frame=CGRectMake(80, 28, 220, 40);
-        self.lbAlias.backgroundColor=[UIColor clearColor];
+        self.lbItelNumber=[[UILabel alloc] init];
+        self.lbItelNumber.frame=CGRectMake(65, 20, 220, 40);
+        self.lbItelNumber.backgroundColor=[UIColor clearColor];
         
-        [self.lbAlias setFont:[UIFont fontWithName:@"HeiTi SC" size:12]];
-        self.lbAlias.numberOfLines=0;
-        [self.lbAlias setTextColor:[UIColor grayColor]];
-        [self.topView addSubview:self.lbAlias];
+        [self.lbItelNumber setFont:[UIFont fontWithName:@"HeiTi SC" size:12]];
+        self.lbItelNumber.numberOfLines=0;
+        [self.lbItelNumber setTextColor:[UIColor grayColor]];
+        [self.topView addSubview:self.lbItelNumber];
         self.topView.cell=self;
-        [self.topView addSubview:self.imageView];
         self.currenTranslate=0;
+        
+        self.imgPhoto=[[NXImageView alloc]initWithFrame:CGRectMake(6, 5, 55, 55)];
+        [self.imgPhoto setRect:3.0 cornerRadius:self.imgPhoto.frame.size.width/4.0 borderColor:[UIColor whiteColor]];
+        //¡™£¢∞§¶•ªº–‘“πø¥†®∑œåß∂ƒ©˙∆˚¬…æ«åΩ≈ç√∫µ≤≥÷÷œı˜ÓÔÚÓ˝ÎÏ‰´„Å¸˛Ç◊˜Â¯Ô¨ÁÏÇ˛∏
+        self.imgPhoto.clipsToBounds=YES;
+        [self.contentView addSubview:self.imgPhoto];
     }
     return self;
 }

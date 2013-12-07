@@ -15,13 +15,92 @@
 @interface UserViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lbShowName;
 @property (weak, nonatomic) IBOutlet NXImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbItel;
-@property (nonatomic,strong) UIWindow *showWindow;
-@property (nonatomic,strong) UIButton *rightBarButton;
+
+
 @end
 
 @implementation UserViewController
+#pragma mark - tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    switch (section) {
+        case 1:
+            return @"基本资料";
+            break;
+            
+        case 2:
+            return @"传统电话";
+            break;
+            
+        default:
+            break;
+    }
+    return nil;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+        case 1:
+            return 4;
+            break;
+        case 2:
+            return 1;
+            break;
+        default:
+            break;
+    }
+    return 0;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    [cell.textLabel setFont:[UIFont fontWithName:@"HeiTi SC" size:12]];
+    UILabel *prop=[[UILabel alloc]init];
+        [cell.contentView addSubview:prop];
+                   prop.frame=CGRectMake(80, 5, 120, 20);
+    [prop setTextColor:[UIColor grayColor]];
+    [prop setFont:[UIFont fontWithName:@"HeiTi SC" size:11]];
+    if (indexPath.section==1) {
+        switch (indexPath.row) {
+            case 0:
+                 cell.textLabel.text=@"姓名";
+                 prop.text=@"谢霆锋";
+                break;
+            case 1:
+                cell.textLabel.text=@"性别";
+                break;
+            case 2:
+                cell.textLabel.text=@"城市";
+                prop.text=@"中国-重庆市-九龙坡区";
+                break;
+            case 3:
+                cell.textLabel.text=@"邮箱";
+                prop.text = @"123456@qq.com";
+                break;
+                
+            default:
+                break;
+        }
+    }
+    else if (indexPath.section==2){
+        cell.textLabel.text=@"手机";
+        prop.text=@"13648345272";
+    }
+    else if (indexPath.section==0){
+        cell.textLabel.text=@"签名";
+        prop.frame=CGRectMake(80, 5, 200, 30);
+        [prop setNumberOfLines:0];
+        prop.text=@"路要一步一步的走，步子迈太大容易扯着蛋.......";
+    }
+    
+    return cell;
+}
 #pragma mark - 打电话
 - (IBAction)callUser:(UIButton *)sender {
     NSCAppDelegate *appDelegate = (NSCAppDelegate*)[UIApplication sharedApplication].delegate;
@@ -34,68 +113,7 @@
     
 }
 
--(UIWindow*)showWindow{
-    if (_showWindow==nil) {
-        _showWindow=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-        [_showWindow setWindowLevel:UIWindowLevelStatusBar];
-        _showWindow.backgroundColor=[UIColor clearColor];
-        UIButton *backBtn=[[UIButton alloc]initWithFrame:_showWindow.bounds];
-        backBtn.backgroundColor=[UIColor grayColor];
-        backBtn.alpha=0.5;
-        [backBtn addTarget:self action:@selector(cancelWindow) forControlEvents:UIControlEventTouchUpInside];
-        [_showWindow addSubview:backBtn];
-        UIButton *delUser=[[UIButton alloc]init];
-        delUser.frame=CGRectMake(10, 480-40*3, 300, 30);
-       [ delUser setTitle:@"删除联系人" forState:UIControlStateNormal];
-        [delUser setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        delUser.backgroundColor=[UIColor whiteColor];
-        [delUser addTarget:self action:@selector(delUser:) forControlEvents:UIControlEventTouchUpInside];
-        [_showWindow addSubview:delUser];
-        
-        UIButton *addBlack=[[UIButton alloc]init];
-        addBlack.frame=CGRectMake(10, 480-40*2, 300, 30);
-        [ addBlack setTitle:@"添加黑名单" forState:UIControlStateNormal];
-        [addBlack setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        addBlack.backgroundColor=[UIColor whiteColor];
-        [addBlack addTarget:self action:@selector(addToBlack:) forControlEvents:UIControlEventTouchUpInside];
-        [_showWindow addSubview:addBlack];
-        
-        UIButton *editAlias=[[UIButton alloc]init];
-        editAlias.frame=CGRectMake(10, 480-40*1, 300, 30);
-        [ editAlias setTitle:@"编辑备注" forState:UIControlStateNormal];
-        [editAlias setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        editAlias.backgroundColor=[UIColor whiteColor];
-        [editAlias addTarget:self action:@selector(editAlias:) forControlEvents:UIControlEventTouchUpInside];
-        [_showWindow addSubview:editAlias];
-        
-        UIButton *cancel=[[UIButton alloc]init];
-        cancel.frame=CGRectMake(10, 480-40*0, 300, 30);
-        [ cancel setTitle:@"取消" forState:UIControlStateNormal];
-        [cancel setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        cancel.backgroundColor=[UIColor whiteColor];
-        [cancel addTarget:self action:@selector(cancelWindow) forControlEvents:UIControlEventTouchUpInside];
-        [_showWindow addSubview:cancel];
-    }
-    return _showWindow;
-}
--(void)cancelWindow{
-    [UIView beginAnimations:@"showButton" context:nil];
-    [self.showWindow setHidden:YES];
-    [UIView commitAnimations];
-}
--(void)callWindow{
-    [UIView beginAnimations:@"showButton" context:nil];
-    [self.showWindow setHidden:NO];
-     [UIView commitAnimations];
-}
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     switch (buttonIndex) {
@@ -122,7 +140,7 @@
     UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
     EditAliasViewController *aliasVC=[storyBoard instantiateViewControllerWithIdentifier:@"editAliasView"];
     aliasVC.user=user;
-    [self cancelWindow];
+    
    [self presentViewController:aliasVC animated:YES completion:^{
        
    }];
@@ -151,21 +169,41 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    //
-    UIButton *rightBarButton=[[UIButton alloc]init];
-    [self.navigationController.navigationBar addSubview:rightBarButton];
-    rightBarButton.frame=CGRectMake(320-40, 5, 30, 30);
-    rightBarButton.backgroundColor=[UIColor orangeColor];
-    [rightBarButton addTarget:self action:@selector(callWindow) forControlEvents:UIControlEventTouchUpInside];
-    self.rightBarButton=rightBarButton;
-    [self.imageView setRect];
-    //self.navigationController.navigationBarHidden=YES;
+    [self.imageView setRect:5.0 cornerRadius:self.imageView.frame.size.width/6.0 borderColor:[UIColor whiteColor]];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(callActionSheet) ];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userAliasChanged:) name:@"resetAlias" object:nil];
+}
+-(void)callActionSheet{
+    UIActionSheet *actionSheet=[[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除联系人" otherButtonTitles:@"添加黑名单",@"编辑备注", nil];
+    [actionSheet showInView:self.view];
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            [self delUser:nil];
+            break;
+        case 2:
+            [self editAlias:nil];
+            break;
+        case 1:
+            [self addToBlack:nil];
+            break;
+            
+        default:
+            break;
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section==0) {
+        return 40;
+    }
+    else return 30;
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.rightBarButton  removeFromSuperview];
-    self.navigationController.navigationBarHidden=NO;
+       self.navigationController.navigationBarHidden=NO;
 }
 
 -(void)userAliasChanged:(NSNotification*)notification{

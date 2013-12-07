@@ -13,7 +13,7 @@
 #import "HostItelUser.h"
 #define  SUCCESS void (^success)(AFHTTPRequestOperation *operation, id responseObject) = ^(AFHTTPRequestOperation *operation, id responseObject)
 #define  FAILURE void (^failure)(AFHTTPRequestOperation *operation, NSError *error)   = ^(AFHTTPRequestOperation *operation, NSError *error)
-static NSString *server=@"http://10.0.0.40:8080/CloudCommunity";
+static NSString *server=@"http://211.149.144.15:9000/CloudCommunity";
 static ItelNetManager *manager=nil;
 @implementation ItelNetManager
 

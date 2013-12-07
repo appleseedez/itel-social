@@ -23,7 +23,7 @@
     UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
     RootViewController *rootVC=[mainStoryboard instantiateViewControllerWithIdentifier:@"rootVC"];
     self.manager = [[IMManagerImp alloc] init];
-    [self.manager setup];
+    //[self.manager setup];
     rootVC.manager=self.manager;
     self.RootVC=rootVC;
     [rootVC setSelectedIndex:2];
@@ -66,6 +66,7 @@
 #if APP_DELEGATE_DEBUG
     NSLog(@"调用 applicationWillResignActive");
 #endif
+    
     [self.manager disconnectToSignalServer];
 }
 
@@ -74,6 +75,7 @@
 #if APP_DELEGATE_DEBUG
     NSLog(@"调用 applicationDidEnterBackground");
 #endif
+     
     [self.manager tearDown];
 }
 
@@ -82,7 +84,10 @@
 #if APP_DELEGATE_DEBUG
     NSLog(@"调用 applicationWillEnterForeground ");
 #endif
-    [self.manager setup];
+    if ([[ItelAction action] getHost]) {
+        [self.manager setup];
+    }
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -90,7 +95,9 @@
 #if APP_DELEGATE_DEBUG
     NSLog(@"调用 applicationDidBecomeActive ");
 #endif
+     if ([[ItelAction action] getHost]) {
     [self.manager connectToSignalServer];
+     }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

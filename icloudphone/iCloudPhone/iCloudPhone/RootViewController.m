@@ -32,9 +32,11 @@
     for (CustonTarbarItem *item in self.customTabbar.items) {
         [item addTarget:self action:@selector(changeController:) forControlEvents:UIControlEventTouchDown];
     }
+    [self changeController:[self.customTabbar.items objectAtIndex:2]];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     [self registerNotifications];
 }
 -(void)viewWillDisappear:(BOOL)animated{
@@ -43,9 +45,9 @@
 }
 -(void)changeController:(CustonTarbarItem*)sender{
     for (CustonTarbarItem *item in self.customTabbar.items ) {
-        [item setSelected:NO];
+        [item isSelected:NO];
     }
-     [sender setSelected:YES];
+     [sender isSelected:YES];
     int i= [self.customTabbar.items indexOfObject:sender];
     [self setSelectedIndex:i];
 }

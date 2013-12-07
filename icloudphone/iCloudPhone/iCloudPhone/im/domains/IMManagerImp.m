@@ -8,6 +8,7 @@
 
 #import "IMManagerImp.h"
 #import  "ConstantHeader.h"
+#import "ItelAction.h"
 @interface IMManagerImp ()
 
 //状态标识符，表明当前所处的状态。目前只有占用和空闲两种 占用：IN_USE，空闲：IDLE
@@ -336,7 +337,8 @@
     [self.engine initMedia];
     [self endSession];
     /*测试需要，自动生成随机号码*/
-    self.selfAccount = [NSString stringWithFormat:@"%d",arc4random()%1000];
+    //self.selfAccount = @"1";// [NSString stringWithFormat:@"%d",arc4random()%1000];
+    
 }
 
 - (void)connectToSignalServer{
@@ -423,5 +425,8 @@
 }
 - (NSString *)myAccount{
     return self.selfAccount;
+}
+- (void) setMyAccount:(NSString*) account{
+    self.selfAccount = account;
 }
 @end

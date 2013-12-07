@@ -18,10 +18,10 @@
     }
     return self;
 }
--(void)setRect{
-    [self.layer   setCornerRadius:self.frame.size.height/6.0]; //设置矩形四个圆角半径
-    [self.layer   setBorderWidth:5.0]; //边框宽度
-    [self.layer   setBorderColor:[UIColor whiteColor].CGColor];//边框颜色
+-(void)setRect:(CGFloat)borderWidth cornerRadius:(CGFloat)cornerRadius borderColor:(UIColor*)borderColor{
+    [self.layer   setCornerRadius:cornerRadius]; //设置矩形四个圆角半径
+    [self.layer   setBorderWidth:borderWidth]; //边框宽度
+    [self.layer   setBorderColor:borderColor.CGColor];//边框颜色
 }
 /*
 // Only override drawRect: if you perform custom drawing.

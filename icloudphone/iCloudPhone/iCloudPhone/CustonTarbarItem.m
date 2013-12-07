@@ -15,8 +15,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.cusImageView=[[UIImageView alloc]init];
-        [self addSubview:self.imageView];
-        
+        [self addSubview:self.cusImageView];
+     
         self.label = [[UILabel alloc]init];
         [self addSubview:self.label];
         
@@ -39,7 +39,7 @@
     
 }
 -(void)setImageViewFrame:(CGRect)frame{
-    self.imageView.frame=frame;
+    self.cusImageView.frame=frame;
 }
 -(void)setLabelFrame:(CGRect)frame{
     self.label.frame=frame;

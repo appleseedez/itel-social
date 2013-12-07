@@ -18,6 +18,7 @@
     host.token=[dic objectForKey:@"token"];
     if (host.token==[NSNull null]) {
          host.token=@"djsadfkjafaklfji";
+       
     }
     host.itelNum=[dic objectForKey:@"itel"];
     host.userId=[dic objectForKey:@"user_id"];

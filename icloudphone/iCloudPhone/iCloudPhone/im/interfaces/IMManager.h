@@ -11,6 +11,7 @@
 #import "video_render_ios_view.h"
 @protocol IMManager <NSObject>
 - (NSString*) myAccount;
+- (void) setMyAccount:(NSString*) account;
 //拨号
 - (void) dial:(NSString*) account;
 // 开始通话过程

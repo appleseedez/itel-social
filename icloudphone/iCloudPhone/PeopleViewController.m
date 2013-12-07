@@ -25,6 +25,7 @@ static float changelimit=100.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //[self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.9333 green:0.9333 blue:0.9333 alpha:1]];
     self.gestreRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panRecognizer:)];
 	// Do any additional setup after loading the view.
 }
@@ -137,7 +138,7 @@ static float changelimit=100.0;
     return nil;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    return 60;
 }
 - (ContactCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -150,9 +151,12 @@ static float changelimit=100.0;
         ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
         cell.backView.frame=cell.bounds;
         cell.topView.frame=cell.bounds;
-        cell.imageView.image=[UIImage imageNamed:@"头像.jpg"];
-        cell.lbAlias.text=user.remarkName;
-        cell.lbNickName.text=user.nickName;
+        cell.imgPhoto.image=[UIImage imageNamed:@"头像.png"];
+        cell.lbItelNumber.text=user.itelNum;
+        cell.lbNickName.text=user.remarkName;
+        if ([user.remarkName isEqualToString:@""]) {
+            cell.lbNickName.text=user.nickName;
+        }
     }
    
     //config the cell
@@ -161,13 +165,13 @@ static float changelimit=100.0;
 }
 
 - (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    ContactCell *cell=(ContactCell*)[tableView cellForRowAtIndexPath:indexPath];
-    [cell.topView removeGestureRecognizer:self.gestreRecognizer];
+   // ContactCell *cell=(ContactCell*)[tableView cellForRowAtIndexPath:indexPath];
+    //[cell.topView removeGestureRecognizer:self.gestreRecognizer];
 }
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ContactCell *cell=(ContactCell*)[tableView cellForRowAtIndexPath:indexPath];
-    [cell.topView addGestureRecognizer:self.gestreRecognizer];
+    //ContactCell *cell=(ContactCell*)[tableView cellForRowAtIndexPath:indexPath];
+    //[cell.topView addGestureRecognizer:self.gestreRecognizer];
     
     ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
     UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
