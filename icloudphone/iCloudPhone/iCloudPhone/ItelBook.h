@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ItelAction.h"
+@class ItelUser;
 @interface ItelBook : NSObject <NSCopying>
 -(void)addUser:(ItelUser*)user forKey:(NSString*)key;
 -(void)removeUserforKey:(NSString*)key;

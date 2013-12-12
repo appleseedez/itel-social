@@ -13,5 +13,6 @@
 @property (nonatomic,strong) NSString *domain;
 @property (nonatomic,strong) NSString *port;
 @property (nonatomic,strong) NSString *stunServer;
+@property (nonatomic,strong) NSString *sessionId;
 +(HostItelUser*)userWithDictionary:(NSDictionary*)dic;
 @end

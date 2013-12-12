@@ -159,4 +159,30 @@ static ItelBookManager *manager;
 -(void)resetUserInBlackBook:(ItelUser*)user{
     [self.blackBook addUser:user forKey:user.itelNum];
 }
+#pragma mark - 精确查询好友列表
+-(ItelUser*)userInFriendBook:(NSString*)userItel{
+    return [self.friendBook userForKey:userItel];
+}
+#pragma mark - 精确查询黑名单
+-(ItelUser*)userInBlackBook:(NSString*)userItel{
+    return [self.blackBook userForKey:userItel];
+}
+#pragma mark - 模糊查询好友列表
+-(NSArray*)searchInfirendBook:(NSString*)search{
+    
+    NSPredicate* searchPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",search];
+    
+    NSMutableArray* matched =
+    [[self.friendBook.getAllKeys filteredArrayUsingPredicate:searchPredicate] mutableCopy];
+    
+   
+    
+    NSMutableArray* resultUsers = [[NSMutableArray alloc]init];
+    for (NSString* key in matched) {
+        [resultUsers addObject:[self.friendBook userForKey:key]];
+    }
+    // NSLog(@"搜索结果为:%@",resultUsers);
+
+    return resultUsers;
+}
 @end

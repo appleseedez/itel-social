@@ -7,6 +7,7 @@
 //
 
 #import "ItelBook.h"
+#import "ItelAction.h"
 @interface ItelBook()
 @property (nonatomic,strong) NSMutableDictionary *users;
 @property (nonatomic,strong) NSMutableOrderedSet *keys;

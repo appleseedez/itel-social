@@ -10,6 +10,7 @@
 #import "PersonInAddressBook.h"
 #import  "AddressBookCell.h"
 #import "ItelBookManager.h"
+#import "StrangerCell.h"
 @interface AddressBookViewController ()
 @property (nonatomic,strong) AddressBook *address;
 
@@ -37,9 +38,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 60;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (AddressBookCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *CellIdentifier = @"Cell";
+    NSString *CellIdentifier = @"addressBookCell";
     AddressBookCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[AddressBookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
@@ -48,17 +49,20 @@
         NSString *key=[[self.address getAllKeys] objectAtIndex:indexPath.row];
         PersonInAddressBook *person= (PersonInAddressBook*)[self.address userForKey:key];
         [cell setCell:person];
+        cell.inviteButton.userInfo=person.tel;
+        [cell.inviteButton addTarget:self action:@selector(invitePerson:) forControlEvents:UIControlEventTouchUpInside];
     }
-    
     
         //config the cell
     return cell;
     
 }
-- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *key=[[self.address getAllKeys] objectAtIndex:indexPath.row];
-    PersonInAddressBook *person= (PersonInAddressBook*)[self.address userForKey:key];
-    [self showSMSPicker:person.tel];
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    return NO;
+}
+- (void)invitePerson:(InviteButton*)sender{
+    
+    [self showSMSPicker:sender.userInfo];
 }
 #pragma mark - 监听通讯录通知
 //void *PhoneBook=(void*)&PhoneBook;

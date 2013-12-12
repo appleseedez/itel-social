@@ -16,7 +16,7 @@
     host.port = [dic objectForKey:@"port"];
     host.stunServer=[dic objectForKey:@"stun_server"];
     host.token=[dic objectForKey:@"token"];
-    if (host.token==[NSNull null]) {
+    if ([host.token isEqual: [NSNull null]]) {
          host.token=@"djsadfkjafaklfji";
        
     }

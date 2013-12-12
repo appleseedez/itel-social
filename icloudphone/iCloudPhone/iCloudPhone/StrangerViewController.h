@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 @class ItelUser;
-@interface StrangerViewController : UIViewController
+@interface StrangerViewController : UIViewController<UIActionSheetDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) ItelUser *user;
 @end

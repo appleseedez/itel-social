@@ -20,6 +20,4 @@
 +(ItelBookManager*)defaultManager;
 -(AddressBook*)phoneBook;
 
-
-
 @end

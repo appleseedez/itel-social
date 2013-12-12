@@ -12,6 +12,7 @@
 #import "NXImageView.h"
 #import "IMManager.h"
 #import "NSCAppDelegate.h"
+#import "ItelBookManager.h"
 @interface UserViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lbShowName;
 @property (weak, nonatomic) IBOutlet NXImageView *imageView;
@@ -168,10 +169,12 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
+    [super viewWillAppear:animated];
+    
     [self.imageView setRect:5.0 cornerRadius:self.imageView.frame.size.width/6.0 borderColor:[UIColor whiteColor]];
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(callActionSheet) ];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userAliasChanged:) name:@"resetAlias" object:nil];
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didAddBlack:) name:@"addBlack" object:nil];
 }
 -(void)callActionSheet{
     UIActionSheet *actionSheet=[[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除联系人" otherButtonTitles:@"添加黑名单",@"编辑备注", nil];
@@ -205,7 +208,19 @@
     [super viewWillDisappear:animated];
        self.navigationController.navigationBarHidden=NO;
 }
-
+-(void)didAddBlack:(NSNotification*)notification{
+    BOOL isNormal = [[notification.userInfo objectForKey:@"isNormal"]boolValue];
+    NSString *result=nil;
+    if (isNormal) {
+        result=@"添加黑名单成功";
+    }
+    else {
+        result = @"添加黑名单失败";
+    }
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:result message:nil delegate:nil cancelButtonTitle:@"返回" otherButtonTitles: nil];
+    [alert show];
+    
+}
 -(void)userAliasChanged:(NSNotification*)notification{
     ItelUser *user=(ItelUser*)notification.object ;
     self.user=user ;

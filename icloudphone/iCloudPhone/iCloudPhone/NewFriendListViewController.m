@@ -48,7 +48,7 @@
     }
     if ([[self.searchResult getAllKeys] count]>indexPath.row) {
         ItelUser *user=[self.searchResult userAtIndex:indexPath.row];
-        cell.imageView.image=[UIImage imageNamed:@"mockhead"];
+        cell.imgPhoto.image=[UIImage imageNamed:@"头像.png"];
         cell.lbItelNumber.text=user.itelNum;
         
         cell.lbNickName.text=user.nickName;

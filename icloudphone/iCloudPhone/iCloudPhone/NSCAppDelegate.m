@@ -17,9 +17,15 @@
 #import "IMManagerImp.h"
 #define winFrame [UIApplication sharedApplication].delegate.window.bounds
 @implementation NSCAppDelegate
-
+-(void) signOut{
+    [[ItelAction action] setHostItelUser:nil];
+    [self changeRootViewController:RootViewControllerLogin];
+    
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signOut) name:@"signOut" object:nil];
     UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:nil];
     RootViewController *rootVC=[mainStoryboard instantiateViewControllerWithIdentifier:@"rootVC"];
     self.manager = [[IMManagerImp alloc] init];
@@ -43,6 +49,7 @@
     }
     else {
         [self.window setRootViewController:loginVC];
+        
     }
     
     self.window.backgroundColor = [UIColor whiteColor];
@@ -55,9 +62,16 @@
     [UIView beginAnimations:@"memory" context:nil];
     if (Type==RootViewControllerLogin) {
         [self.window setRootViewController:self.loginVC];
+        [self.manager tearDown];
+        [self.manager disconnectToSignalServer];
+        [self.manager setMyAccount:nil];
     }
     else if(Type==RootViewControllerMain){
         [self.window setRootViewController:self.RootVC];
+        [self.manager setup];
+        NSString *hostItel=[[ItelAction action]getHost].itelNum;
+        [self.manager setMyAccount:hostItel ];
+        [self.manager connectToSignalServer];
     }
     [UIView commitAnimations];
 }

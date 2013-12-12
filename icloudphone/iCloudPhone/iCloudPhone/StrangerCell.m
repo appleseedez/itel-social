@@ -23,19 +23,25 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.lbNickName=[[UILabel alloc]init];
-        self.lbNickName.frame=CGRectMake(80, 3, 80, 25);
+        self.lbNickName.frame=CGRectMake(65, 6, 80, 25);
         self.lbNickName.backgroundColor=[UIColor clearColor];
         
-        [self.contentView addSubview:self.lbNickName];
+        [self addSubview:self.lbNickName];
         
         self.lbItelNumber=[[UILabel alloc] init];
-        self.lbItelNumber.frame=CGRectMake(80, 28, 220, 40);
+        self.lbItelNumber.frame=CGRectMake(65, 20, 220, 40);
         self.lbItelNumber.backgroundColor=[UIColor clearColor];
         
         [self.lbItelNumber setFont:[UIFont fontWithName:@"HeiTi SC" size:12]];
         self.lbItelNumber.numberOfLines=0;
         [self.lbItelNumber setTextColor:[UIColor grayColor]];
-        [self.contentView addSubview:self.lbItelNumber];
+        [self addSubview:self.lbItelNumber];
+        
+        self.imgPhoto=[[NXImageView alloc]initWithFrame:CGRectMake(6, 5, 55, 55)];
+        [self.imgPhoto setRect:3.0 cornerRadius:self.imgPhoto.frame.size.width/4.0 borderColor:[UIColor whiteColor]];
+       self.imgPhoto.clipsToBounds=YES;
+        [self.contentView addSubview:self.imgPhoto];
+
         
     }
     return self;

@@ -27,7 +27,7 @@ static float changelimit=100.0;
     [super viewDidLoad];
     //[self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0.9333 green:0.9333 blue:0.9333 alpha:1]];
     self.gestreRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panRecognizer:)];
-	// Do any additional setup after loading the view.
+	
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
@@ -182,7 +182,7 @@ static float changelimit=100.0;
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
-    [[ItelAction action] getItelFriendList:0];
+    [[ItelAction action] getItelFriendList:start];
 
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshFriendListNotification:) name:@"getItelList" object:nil];

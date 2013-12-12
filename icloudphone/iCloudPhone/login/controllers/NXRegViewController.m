@@ -7,36 +7,39 @@
 //
 
 #import "NXRegViewController.h"
-
+#import "RegManager.h"
 @interface NXRegViewController ()
 
 @end
 
 @implementation NXRegViewController
-#pragma  mark - 点击空白退出键盘
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
-    
+
+
+- (IBAction)personalClicked:(UIButton *)sender {
+    [RegManager defaultManager].regType=@"0";
+}
+- (IBAction)priceCLicked:(UIButton *)sender {
+    [RegManager defaultManager].regType=@"1";
 }
 
-- (IBAction)dismiss:(UIBarButtonItem *)sender {
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"注册页面已经消失");
-    }];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismiss) name:@"regSuccess" object:nil];
         [self.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-    NSLog(@"%f",self.view.frame.size.height);
-    // Do any additional setup after loading the view from its nib.
+   
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+   // self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(dismiss)];
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"取消注册" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
+   }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)dismiss{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 @end

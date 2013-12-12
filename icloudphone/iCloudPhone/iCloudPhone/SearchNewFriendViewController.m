@@ -29,6 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
 -(void)pushNewFriendList:(NSString*)searchText{
     UIStoryboard *story=[UIStoryboard storyboardWithName:@"iCloudPhone" bundle:Nil];
     NewFriendListViewController *newList=[story instantiateViewControllerWithIdentifier:@"newFriendList"];

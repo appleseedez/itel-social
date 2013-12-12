@@ -35,6 +35,12 @@
 -(void)addItelUserIntoAddedList:(NSString *)itel;
 //删除用户从等待确认列表
 -(void)delItelUserIntoAddedList:(NSString *)itel;
+//查询好友列表
+-(ItelUser*)userInFriendBook:(NSString*)userItel;
+//查询黑名单
+-(ItelUser*)userInBlackBook:(NSString*)userItel;
+//模糊查询好友
+-(NSArray*)searchInfirendBook:(NSString*)search;
 @end
 
 #pragma  mark - 用户操作协议
@@ -124,6 +130,11 @@
 
 //查询是否已经添加该联系人
 -(BOOL)checkItelAdded:(NSString*)itel;
-
-
+#pragma mark - 查找本机用户接口
+//精确查找好友列表
+-(ItelUser*)userInFriendBook:(NSString*)itel;
+//警觉查找黑名单
+-(ItelUser*)userInBlackBook:(NSString*)itel;
+//模糊查找好友
+-(NSArray*)searchInFirendBook:(NSString*)search;
 @end

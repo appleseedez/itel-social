@@ -13,11 +13,13 @@
 #import "NXMockServer.h"
 #import "AFNetworking.h"
 #import "NSCAppDelegate.h"
+#import "RegNextButton.h"
 
 #import "ItelAction.h"
 #define mockServer [AFHTTPSessionManager manager]
 
 @interface NXLoginViewController ()
+@property (weak, nonatomic) IBOutlet RegNextButton *btnLogin;
 
 @end
 
@@ -53,15 +55,15 @@
          self.txtInuptCheckMessage.text=@"输入不正确";
     }
     else{
-        self.txtInuptCheckMessage.text=@"登录中...";
-        [self.actWaitingToLogin startAnimating];
+        
         [self requestToLogin];
     }
 }
 -(void)requestToLogin{
     //这是退出键盘的 不用理它
     [self.view endEditing:YES];
-   
+    self.txtInuptCheckMessage.text=@"登录中...";
+    [self.actWaitingToLogin startAnimating];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://211.149.144.15:9000/CloudCommunity/login.json"]];
     
     [request setHTTPMethod:@"POST"];
@@ -84,15 +86,13 @@
 
                 [[ItelAction action] setHostItelUser:host];
                 [self.actWaitingToLogin stopAnimating];
-                self.txtInuptCheckMessage.text = @"登录成功";
+                self.txtInuptCheckMessage.text = @"";
 
                 NSCAppDelegate *delegate =   (NSCAppDelegate*) [UIApplication sharedApplication].delegate;
                 [delegate changeRootViewController:RootViewControllerMain];
                 
                 [[ItelAction action] checkAddressBookMatchingItel];
-                [delegate.manager setup];
-                [delegate.manager setMyAccount:host.itelNum];
-                [delegate.manager connectToSignalServer];
+                
                 //[[ItelAction action] delFriendFromBlack:@"1000002"];
                 //[[ItelAction action] getItelBlackList:0];
             }
@@ -147,9 +147,18 @@
     self.actWaitingToLogin.hidesWhenStopped=YES;
     self.txtUserCloudNumber.text=@"1000003";
     self.txtUserPassword.text=@"123456";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(autoLogin:) name:@"regSuccess" object:nil];
 	// Do any additional setup after loading the view.
 }
 
-
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.btnLogin setUI];
+    
+}
+-(void)autoLogin:(NSNotification*)notification{
+    self.txtUserCloudNumber.text=[notification.userInfo objectForKey:@"itel"];
+    self.txtUserPassword.text=[notification.userInfo objectForKey:@"password"];
+    [self requestToLogin];
+}
 @end

@@ -208,6 +208,18 @@
 -(ItelBook*) getFriendBook{
     return [self.itelBookActionDelegate friendBook];
 }
+//查找好友列表
+-(ItelUser*)userInFriendBook:(NSString*)itel{
+    return [self.itelBookActionDelegate userInFriendBook:itel];
+}
+//查找黑名单
+-(ItelUser*)userInBlackBook:(NSString*)itel{
+    return [self.itelBookActionDelegate userInBlackBook:itel];
+}
+//模糊查找好友
+-(NSArray*)searchInFirendBook:(NSString*)search{
+   return  [self.itelBookActionDelegate searchInfirendBook:search];
+}
 #pragma mark - 响应正常返回的通知(异常由netManager直接通知)
 
 -(void) NotifyForNormalResponse:(NSString*)name parameters:(id)parameters{
